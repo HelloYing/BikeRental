@@ -1,0 +1,373 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<PROCESS model-entity="JSFProcess">
+ <PROCESS-ITEM NAME="rules:#login.xhtml" PATH="/login.xhtml"
+  SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#login.xhtml:0" NAME="item"
+   PATH="/login.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="Employee::#welcome.xhtml" NAME="output"
+    PATH="/welcome.xhtml" TARGET="rules:#welcome.xhtml" TITLE="Employee" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#login.xhtml:1" NAME="item1"
+   PATH="/login.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="Employer::#welcomeemployer.xhtml"
+    NAME="output" PATH="/welcomeemployer.xhtml"
+    TARGET="rules:#welcomeemployer.xhtml" TITLE="Employer" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#login.xhtml:2" NAME="item2"
+   PATH="/login.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="false::#loginfail.xhtml" NAME="output"
+    PATH="/loginfail.xhtml" TARGET="rules:#loginfail.xhtml"
+    TITLE="false" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#login.xhtml:3" NAME="item3"
+   PATH="/login.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="register::#register.xhtml" NAME="output"
+    PATH="/register.xhtml" TARGET="rules:#register.xhtml"
+    TITLE="register" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#loginfail.xhtml" PATH="/loginfail.xhtml"
+  SHAPE="256,465,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#loginfail.xhtml:0" NAME="item"
+   PATH="/loginfail.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#login.xhtml" NAME="output"
+    PATH="/login.xhtml" TARGET="rules:#login.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#welcome.xhtml" PATH="/welcome.xhtml"
+  SHAPE="240,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#welcome.xhtml:0" NAME="item"
+   PATH="/welcome.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="true::#jobresults.xhtml" NAME="output"
+    PATH="/jobresults.xhtml" TARGET="rules:#jobresults.xhtml"
+    TITLE="true" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#welcome.xhtml:1" NAME="item1"
+   PATH="/welcome.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="false::#noresults.xhtml" NAME="output"
+    PATH="/noresults.xhtml" TARGET="rules:#noresults.xhtml"
+    TITLE="false" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#welcome.xhtml:2" NAME="item2"
+   PATH="/welcome.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="profile::#profile.xhtml" NAME="output"
+    PATH="/profile.xhtml" TARGET="rules:#profile.xhtml" TITLE="profile" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#welcome.xhtml:3" NAME="item3"
+   PATH="/welcome.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="logout::#exit.xhtml" NAME="output"
+    PATH="/exit.xhtml" TARGET="rules:#exit.xhtml" TITLE="logout" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#welcomeemployer.xhtml"
+  PATH="/welcomeemployer.xhtml" SHAPE="608,433,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#welcomeemployer.xhtml:0" NAME="item"
+   PATH="/welcomeemployer.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="add::#addjob.xhtml" NAME="output"
+    PATH="/addjob.xhtml" TARGET="rules:#addjob.xhtml" TITLE="add" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#welcomeemployer.xhtml:1" NAME="item1"
+   PATH="/welcomeemployer.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="profile::#profileemployer.xhtml"
+    NAME="output" PATH="/profileemployer.xhtml"
+    TARGET="rules:#profileemployer.xhtml" TITLE="profile" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#welcomeemployer.xhtml:2" NAME="item2"
+   PATH="/welcomeemployer.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="find::#findcandidates.xhtml" NAME="output"
+    PATH="/findcandidates.xhtml" TARGET="rules:#findcandidates.xhtml"
+    TITLE="find" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#welcomeemployer.xhtml:3" NAME="item3"
+   PATH="/welcomeemployer.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="logout::#exit.xhtml" NAME="output"
+    PATH="/exit.xhtml" TARGET="rules:#exit.xhtml" TITLE="logout" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#exit.xhtml" PATH="/exit.xhtml"
+  SHAPE="896,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#exit.xhtml:0" NAME="item" PATH="/exit.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="logout::#login.xhtml" NAME="output"
+    PATH="/login.xhtml" TARGET="rules:#login.xhtml" TITLE="logout" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#findcandidates.xhtml"
+  PATH="/findcandidates.xhtml" SHAPE="608,401,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#findcandidates.xhtml:0" NAME="item"
+   PATH="/findcandidates.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#welcomeemployer.xhtml" NAME="output"
+    PATH="/welcomeemployer.xhtml" TARGET="rules:#welcomeemployer.xhtml"
+    TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#findcandidates.xhtml:1" NAME="item1"
+   PATH="/findcandidates.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="found::#candidateresults.xhtml"
+    NAME="output" PATH="/candidateresults.xhtml"
+    TARGET="rules:#candidateresults.xhtml" TITLE="found" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#findcandidates.xhtml:2" NAME="item2"
+   PATH="/findcandidates.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="false::#nocandidatesfound.xhtml"
+    NAME="output" PATH="/nocandidatesfound.xhtml"
+    TARGET="rules:#nocandidatesfound.xhtml" TITLE="false" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#nocandidatesfound.xhtml"
+  PATH="/nocandidatesfound.xhtml" SHAPE="864,625,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#nocandidatesfound.xhtml:0" NAME="item"
+   PATH="/nocandidatesfound.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#findcandidates.xhtml" NAME="output"
+    PATH="/findcandidates.xhtml" TARGET="rules:#findcandidates.xhtml"
+    TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#candidateresults.xhtml"
+  PATH="/candidateresults.xhtml" SHAPE="864,625,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#candidateresults.xhtml:0" NAME="item"
+   PATH="/candidateresults.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#findcandidates.xhtml" NAME="output"
+    PATH="/findcandidates.xhtml" TARGET="rules:#findcandidates.xhtml"
+    TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#addjob.xhtml" PATH="/addjob.xhtml"
+  SHAPE="560,401,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#addjob.xhtml:0" NAME="item"
+   PATH="/addjob.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="true::#jobadded.xhtml" NAME="output"
+    PATH="/jobadded.xhtml" TARGET="rules:#jobadded.xhtml" TITLE="true" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#addjob.xhtml:1" NAME="item1"
+   PATH="/addjob.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#welcomeemployer.xhtml" NAME="output"
+    PATH="/welcomeemployer.xhtml" TARGET="rules:#welcomeemployer.xhtml"
+    TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#jobadded.xhtml" PATH="/jobadded.xhtml"
+  SHAPE="576,433,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#jobadded.xhtml:0" NAME="item"
+   PATH="/jobadded.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#welcomeemployer.xhtml" NAME="output"
+    PATH="/welcomeemployer.xhtml" TARGET="rules:#welcomeemployer.xhtml"
+    TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#noresults.xhtml" PATH="/noresults.xhtml"
+  SHAPE="464,161,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#noresults.xhtml:0" NAME="item"
+   PATH="/noresults.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#welcome.xhtml" NAME="output"
+    PATH="/welcome.xhtml" TARGET="rules:#welcome.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#jobresults.xhtml" PATH="/jobresults.xhtml"
+  SHAPE="448,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#jobresults.xhtml:0" NAME="item"
+   PATH="/jobresults.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="true::#applied.xhtml" NAME="output"
+    PATH="/applied.xhtml" TARGET="rules:#applied.xhtml" TITLE="true" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#jobresults.xhtml:1" NAME="item1"
+   PATH="/jobresults.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#welcome.xhtml" NAME="output"
+    PATH="/welcome.xhtml" TARGET="rules:#welcome.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#jobresults.xhtml:2" NAME="item2"
+   PATH="/jobresults.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="logout::#exit.xhtml" NAME="output"
+    PATH="/exit.xhtml" TARGET="rules:#exit.xhtml" TITLE="logout" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#applied.xhtml" PATH="/applied.xhtml"
+  SHAPE="656,33,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#applied.xhtml:0" NAME="item"
+   PATH="/applied.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="logout::#exit.xhtml" NAME="output"
+    PATH="/exit.xhtml" TARGET="rules:#exit.xhtml" TITLE="logout" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#applied.xhtml:1" NAME="item1"
+   PATH="/applied.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="logout::#exit.xhtml" NAME="output"
+    PATH="/exit.xhtml" TARGET="rules:#exit.xhtml" TITLE="logout" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#applied.xhtml:2" NAME="item2"
+   PATH="/applied.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="true::#appliedcheck.xhtml" NAME="output"
+    PATH="/appliedcheck.xhtml" TARGET="rules:#appliedcheck.xhtml"
+    TITLE="true" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#appliedcheck.xhtml"
+  PATH="/appliedcheck.xhtml" SHAPE="912,161,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#appliedcheck.xhtml:0" NAME="item"
+   PATH="/appliedcheck.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="logout::#exit.xhtml" NAME="output"
+    PATH="/exit.xhtml" TARGET="rules:#exit.xhtml" TITLE="logout" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#appliedcheck.xhtml:1" NAME="item1"
+   PATH="/appliedcheck.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#welcome.xhtml" NAME="output"
+    PATH="/welcome.xhtml" TARGET="rules:#welcome.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#register.xhtml" PATH="/register.xhtml"
+  SHAPE="48,192,50,25" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#register.xhtml:0" NAME="item"
+   PATH="/register.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="true::#registered.xhtml" NAME="output1"
+    PATH="/registered.xhtml" TARGET="rules:#registered.xhtml"
+    TITLE="true" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#register.xhtml:1" NAME="item1"
+   PATH="/register.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="login::#login.xhtml" NAME="output"
+    PATH="/login.xhtml" TARGET="rules:#login.xhtml" TITLE="login" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#register.xhtml:2" NAME="item2"
+   PATH="/register.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="Exists::#registerfail.xhtml" NAME="output"
+    PATH="/registerfail.xhtml" TARGET="rules:#registerfail.xhtml"
+    TITLE="Exists" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#register.xhtml:3" NAME="item3"
+   PATH="/register.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="test::#test.xhtml" NAME="output"
+    PATH="/test.xhtml" TARGET="rules:#test.xhtml" TITLE="test" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#test.xhtml" PATH="/test.xhtml"
+  SHAPE="64,433,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#test.xhtml:0" NAME="item" PATH="/test.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#register.xhtml" NAME="output"
+    PATH="/register.xhtml" TARGET="rules:#register.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#registerfail.xhtml"
+  PATH="/registerfail.xhtml" SHAPE="256,321,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#registerfail.xhtml:0" NAME="item"
+   PATH="/registerfail.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#register.xhtml" NAME="output"
+    PATH="/register.xhtml" TARGET="rules:#register.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#registered.xhtml" PATH="/registered.xhtml"
+  SHAPE="208,160,0,0" model-entity="JSFProcessGroup" persistent="true">
+  <PROCESS-ITEM ID="rules:#registered.xhtml:0" NAME="item"
+   PATH="/registered.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="loginnow::#login.xhtml" NAME="output"
+    PATH="/login.xhtml" TARGET="rules:#login.xhtml" TITLE="loginnow" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#profile.xhtml" PATH="/profile.xhtml"
+  SHAPE="48,337,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#profile.xhtml:0" NAME="item"
+   PATH="/profile.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#welcome.xhtml" NAME="output"
+    PATH="/welcome.xhtml" TARGET="rules:#welcome.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#profile.xhtml:1" NAME="item1"
+   PATH="/profile.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="logout::#exit.xhtml" NAME="output"
+    PATH="/exit.xhtml" TARGET="rules:#exit.xhtml" TITLE="logout" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#profile.xhtml:2" NAME="item2"
+   PATH="/profile.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="update::#profileupdated.xhtml" NAME="output"
+    PATH="/profileupdated.xhtml" TARGET="rules:#profileupdated.xhtml"
+    TITLE="update" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#profile.xhtml:3" NAME="item3"
+   PATH="/profile.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="fail::#profileupdatefail.xhtml"
+    NAME="output" PATH="/profileupdatefail.xhtml"
+    TARGET="rules:#profileupdatefail.xhtml" TITLE="fail" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#profile.xhtml:4" NAME="item4"
+   PATH="/profile.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="true::#appliedcheck.xhtml" NAME="output"
+    PATH="/appliedcheck.xhtml" TARGET="rules:#appliedcheck.xhtml"
+    TITLE="true" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#profileupdatefail.xhtml"
+  PATH="/profileupdatefail.xhtml" SHAPE="336,593,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#profileupdatefail.xhtml:0" NAME="item"
+   PATH="/profileupdatefail.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#profile.xhtml" NAME="output"
+    PATH="/profile.xhtml" TARGET="rules:#profile.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#profileupdated.xhtml"
+  PATH="/profileupdated.xhtml" SHAPE="320,593,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#profileupdated.xhtml:0" NAME="item"
+   PATH="/profileupdated.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#profile.xhtml" NAME="output"
+    PATH="/profile.xhtml" TARGET="rules:#profile.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#profileemployer.xhtml"
+  PATH="/profileemployer.xhtml" SHAPE="816,241,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#profileemployer.xhtml:0" NAME="item"
+   PATH="/profileemployer.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#welcomeemployer.xhtml" NAME="output"
+    PATH="/welcomeemployer.xhtml" TARGET="rules:#welcomeemployer.xhtml"
+    TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#profileemployer.xhtml:1" NAME="item1"
+   PATH="/profileemployer.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="logout::#exit.xhtml" NAME="output"
+    PATH="/exit.xhtml" TARGET="rules:#exit.xhtml" TITLE="logout" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#profileemployer.xhtml:2" NAME="item2"
+   PATH="/profileemployer.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="true::#jobsaddedcheck.xhtml" NAME="output"
+    PATH="/jobsaddedcheck.xhtml" TARGET="rules:#jobsaddedcheck.xhtml"
+    TITLE="true" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#profileemployer.xhtml:3" NAME="item3"
+   PATH="/profileemployer.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="update::#employerprofileupdated.xhtml"
+    NAME="output" PATH="/employerprofileupdated.xhtml"
+    TARGET="rules:#employerprofileupdated.xhtml" TITLE="update" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#profileemployer.xhtml:4" NAME="item4"
+   PATH="/profileemployer.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="fail::#employerprofileupdatefail.xhtml"
+    NAME="output" PATH="/employerprofileupdatefail.xhtml"
+    TARGET="rules:#employerprofileupdatefail.xhtml" TITLE="fail" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#employerprofileupdatefail.xhtml"
+  PATH="/employerprofileupdatefail.xhtml" SHAPE="1152,433,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#employerprofileupdatefail.xhtml:0"
+   NAME="item" PATH="/employerprofileupdatefail.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#profileemployer.xhtml" NAME="output"
+    PATH="/profileemployer.xhtml" TARGET="rules:#profileemployer.xhtml"
+    TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#employerprofileupdated.xhtml"
+  PATH="/employerprofileupdated.xhtml" SHAPE="1152,433,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#employerprofileupdated.xhtml:0" NAME="item"
+   PATH="/employerprofileupdated.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#profileemployer.xhtml" NAME="output"
+    PATH="/profileemployer.xhtml" TARGET="rules:#profileemployer.xhtml"
+    TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#jobsaddedcheck.xhtml"
+  PATH="/jobsaddedcheck.xhtml" SHAPE="1088,401,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#jobsaddedcheck.xhtml:0" NAME="item"
+   PATH="/jobsaddedcheck.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#profileemployer.xhtml" NAME="output"
+    PATH="/profileemployer.xhtml" TARGET="rules:#profileemployer.xhtml"
+    TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+  <PROCESS-ITEM ID="rules:#jobsaddedcheck.xhtml:1" NAME="item1"
+   PATH="/jobsaddedcheck.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="logout::#exit.xhtml" NAME="output"
+    PATH="/exit.xhtml" TARGET="rules:#exit.xhtml" TITLE="logout" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+</PROCESS>

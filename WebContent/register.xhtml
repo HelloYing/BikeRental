@@ -1,0 +1,46 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+    <ui:define name="content">
+        <h:form>
+            <h:panelGrid columns="2">
+                <h:outputText id = "o1" value="Name"></h:outputText>
+                <h:inputText id = "i1" value="#{registerBean.name}"></h:inputText>
+                <h:outputText  id = "o2" value="Password"></h:outputText>
+                <h:inputSecret  id = "i2" value="#{registerBean.password}"></h:inputSecret>
+				<h:outputText  id = "o3" value="#{registerBean.valid}"></h:outputText>
+                
+            </h:panelGrid>
+            
+            <h:commandButton value="Is Name Valid?" style= "position: absolute; left: 300px; top: 59px;">
+            	            <f:ajax execute = "i1" render = "o3"></f:ajax>
+            </h:commandButton>
+            
+            <h:graphicImage name="images/Register.gif" width="70" height="30" style= "position: 
+            absolute; left: 300px; top: 85px;"/>
+            
+            
+            <h:commandButton value="Register" action="#{registerBean.userName}" style= "position: static; 
+            left: 200px; top: 100px; width: 100px; height: 100px"></h:commandButton>
+            
+            <h:commandButton value="Go to Login" action="login" style= "position: static; 
+            left: 180px; top: 130px; width: 100px; height: 100px"></h:commandButton>
+            
+            <h:selectOneRadio value="#{registerBean.selection}">
+   				<f:selectItem itemValue="Employer" itemLabel="Employer" />
+   				<f:selectItem itemValue="Employee" itemLabel="Employee" />
+   			</h:selectOneRadio>
+   			
+   		    <h:commandButton value="Test" action="test"></h:commandButton>
+   			
+            
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>

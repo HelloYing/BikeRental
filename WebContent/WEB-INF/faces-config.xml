@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<faces-config version="2.0" xmlns="http://java.sun.com/xml/ns/javaee"
+ xmlns:xi="http://www.w3.org/2001/XInclude"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
+ <managed-bean>
+  <managed-bean-name>loginBean</managed-bean-name>
+  <managed-bean-class>edu.osu.LoginBean</managed-bean-class>
+  <managed-bean-scope>application</managed-bean-scope>
+
+ </managed-bean>
+ 
+ <managed-bean>
+  <managed-bean-name>registerBean</managed-bean-name>
+  <managed-bean-class>edu.osu.RegisterBean</managed-bean-class>
+  <managed-bean-scope>application</managed-bean-scope>
+ </managed-bean>
+ 
+  <managed-bean>
+  <managed-bean-name>welcomeBean</managed-bean-name>
+  <managed-bean-class>edu.osu.WelcomeBean</managed-bean-class>
+  <managed-bean-scope>application</managed-bean-scope>
+  <managed-property>
+  <property-name>logBean</property-name>
+  <property-class>edu.osu.LoginBean</property-class>
+  <value>#{loginBean}</value>
+  </managed-property>
+    <managed-property>
+  <property-name>profileEmployerBean</property-name>
+  <property-class>edu.osu.ProfileEmployerBean</property-class>
+  <value>#{profileEmployerBean}</value>
+  </managed-property>
+  <managed-property>
+  <property-name>profileBean</property-name>
+  <property-class>edu.osu.ProfileBean</property-class>
+  <value>#{profileBean}</value>
+  </managed-property>
+ </managed-bean>
+ 
+ 
+   <managed-bean>
+  <managed-bean-name>jobsAppliedBean</managed-bean-name>
+  <managed-bean-class>edu.osu.JobsAppliedBean</managed-bean-class>
+  <managed-bean-scope>application</managed-bean-scope>
+  <managed-property>
+  <property-name>logBean</property-name>
+  <property-class>edu.osu.LoginBean</property-class>
+  <value>#{loginBean}</value>
+  </managed-property>
+ </managed-bean>
+ 
+ 
+   <managed-bean>
+  <managed-bean-name>applyBean</managed-bean-name>
+  <managed-bean-class>edu.osu.ApplyBean</managed-bean-class>
+  <managed-bean-scope>application</managed-bean-scope>
+  <managed-property>
+  <property-name>welBean</property-name>
+  <property-class>edu.osu.WelcomeBean</property-class>
+  <value>#{welcomeBean}</value>
+  </managed-property>
+  
+  <managed-property>
+  <property-name>logBean</property-name>
+  <property-class>edu.osu.LoginBean</property-class>
+  <value>#{loginBean}</value>
+  </managed-property>
+ </managed-bean>
+ 
+    <managed-bean>
+  <managed-bean-name>addBean</managed-bean-name>
+  <managed-bean-class>edu.osu.AddBean</managed-bean-class>
+  <managed-bean-scope>application</managed-bean-scope>
+      <managed-property>
+  <property-name>logBean</property-name>
+  <property-class>edu.osu.LoginBean</property-class>
+  <value>#{loginBean}</value>
+  </managed-property>
+ </managed-bean>
+ 
+ 
+ 
+  <managed-bean>
+  <managed-bean-name>profileEmployerBean</managed-bean-name>
+  <managed-bean-class>edu.osu.ProfileEmployerBean</managed-bean-class>
+  <managed-bean-scope>application</managed-bean-scope>
+      <managed-property>
+  <property-name>logBean</property-name>
+  <property-class>edu.osu.LoginBean</property-class>
+  <value>#{loginBean}</value>
+  </managed-property>
+ </managed-bean>
+ 
+ 
+ 
+ 
+ 
+ 
+  <managed-bean>
+  <managed-bean-name>jobsAddedBean</managed-bean-name>
+  <managed-bean-class>edu.osu.JobsAddedBean</managed-bean-class>
+  <managed-bean-scope>application</managed-bean-scope>
+  <managed-property>
+  <property-name>logBean</property-name>
+  <property-class>edu.osu.LoginBean</property-class>
+  <value>#{loginBean}</value>
+  </managed-property>
+ </managed-bean>
+ 
+ 
+ <managed-bean>
+  <managed-bean-name>candidateBean</managed-bean-name>
+  <managed-bean-class>edu.osu.CandidateBean</managed-bean-class>
+  <managed-bean-scope>application</managed-bean-scope>
+ </managed-bean>
+ 
+  <managed-bean>
+  <managed-bean-name>logHelperBean</managed-bean-name>
+  <managed-bean-class>edu.osu.LogHelperBean</managed-bean-class>
+  <managed-bean-scope>application</managed-bean-scope>
+ </managed-bean>
+ 
+ 
+ 
+ <managed-bean>
+  <managed-bean-name>profileBean</managed-bean-name>
+  <managed-bean-class>edu.osu.ProfileBean</managed-bean-class>
+  <managed-bean-scope>application</managed-bean-scope>
+  <managed-property>
+  <property-name>logBean</property-name>
+  <property-class>edu.osu.LoginBean</property-class>
+  <value>#{loginBean}</value>
+  </managed-property>
+ </managed-bean>
+ 
+ 
+ 
+ 
+ 
+ <navigation-rule>
+  <display-name>login.xhtml</display-name>
+  <from-view-id>/login.xhtml</from-view-id>
+  <navigation-case>
+	       <from-outcome>Employee</from-outcome>
+      <to-view-id>/welcome.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ <navigation-rule>
+  <display-name>login.xhtml</display-name>
+  <from-view-id>/login.xhtml</from-view-id>
+  <navigation-case>
+	       <from-outcome>Employer</from-outcome>
+      <to-view-id>/welcomeemployer.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+  <navigation-rule>
+  <display-name>login.xhtml</display-name>
+  <from-view-id>/login.xhtml</from-view-id>
+  <navigation-case>
+	       <from-outcome>false</from-outcome>
+      <to-view-id>/loginfail.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+ 
+   <navigation-rule>
+  <display-name>loginfail.xhtml</display-name>
+  <from-view-id>/loginfail.xhtml</from-view-id>
+  <navigation-case>
+	       <from-outcome>back</from-outcome>
+      <to-view-id>/login.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+ 
+ 
+  <navigation-rule>
+  <display-name>welcome.xhtml</display-name>
+  <from-view-id>/welcome.xhtml</from-view-id>
+  <navigation-case>
+	       <from-outcome>true</from-outcome>
+      <to-view-id>/jobresults.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+   <navigation-rule>
+  <display-name>welcome.xhtml</display-name>
+  <from-view-id>/welcome.xhtml</from-view-id>
+  <navigation-case>
+	       <from-outcome>false</from-outcome>
+      <to-view-id>/noresults.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+ 
+    <navigation-rule>
+   <display-name>welcomeemployer.xhtml</display-name>
+  <from-view-id>/welcomeemployer.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>add</from-outcome>
+   <to-view-id>/addjob.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+  <navigation-rule>
+   <display-name>exit.xhtml</display-name>
+  <from-view-id>/exit.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>logout</from-outcome>
+   <to-view-id>/login.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ <navigation-rule>
+   <display-name>login.xhtml</display-name>
+  <from-view-id>/login.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>register</from-outcome>
+   <to-view-id>/register.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+ 
+  <navigation-rule>
+   <display-name>welcome.xhtml</display-name>
+  <from-view-id>/welcome.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>profile</from-outcome>
+   <to-view-id>/profile.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+ 
+ 
+ 
+  <navigation-rule>
+   <display-name>welcomeemployer.xhtml</display-name>
+  <from-view-id>/welcomeemployer.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>profile</from-outcome>
+   <to-view-id>/profileemployer.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+   <navigation-rule>
+   <display-name>welcomeemployer.xhtml</display-name>
+  <from-view-id>/welcomeemployer.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>find</from-outcome>
+   <to-view-id>/findcandidates.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+  <navigation-rule>
+   <display-name>findcandidates.xhtml</display-name>
+  <from-view-id>/findcandidates.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/welcomeemployer.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+  <navigation-rule>
+   <display-name>findcandidates.xhtml</display-name>
+  <from-view-id>/findcandidates.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>found</from-outcome>
+   <to-view-id>/candidateresults.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+ 
+   <navigation-rule>
+   <display-name>findcandidates.xhtml</display-name>
+  <from-view-id>/findcandidates.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>false</from-outcome>
+   <to-view-id>/nocandidatesfound.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+    <navigation-rule>
+   <display-name>nocandidatesfound.xhtml</display-name>
+  <from-view-id>/nocandidatesfound.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/findcandidates.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+   <navigation-rule>
+   <display-name>candidateresults.xhtml</display-name>
+  <from-view-id>/candidateresults.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/findcandidates.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+ 
+ 
+ 
+     <navigation-rule>
+   <display-name>addjob.xhtml</display-name>
+  <from-view-id>/addjob.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>true</from-outcome>
+   <to-view-id>/jobadded.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ <navigation-rule>
+   <display-name>addjob.xhtml</display-name>
+  <from-view-id>/addjob.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/welcomeemployer.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+     <navigation-rule>
+   <display-name>jobadded.xhtml</display-name>
+  <from-view-id>/jobadded.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/welcomeemployer.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+   <navigation-rule>
+  <display-name>noresults.xhtml</display-name>
+  <from-view-id>/noresults.xhtml</from-view-id>
+  <navigation-case>
+	       <from-outcome>back</from-outcome>
+      <to-view-id>/welcome.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   <navigation-rule>
+  <display-name>jobresults.xhtml</display-name>
+  <from-view-id>/jobresults.xhtml</from-view-id>
+  <navigation-case>
+	       <from-outcome>true</from-outcome>
+      <to-view-id>/applied.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ <navigation-rule>
+  <display-name>jobresults.xhtml</display-name>
+  <from-view-id>/jobresults.xhtml</from-view-id>
+  <navigation-case>
+	       <from-outcome>back</from-outcome>
+      <to-view-id>/welcome.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+  <navigation-rule>
+   <display-name>applied.xhtml</display-name>
+  <from-view-id>/applied.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>logout</from-outcome>
+   <to-view-id>/exit.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+   <navigation-rule>
+   <display-name>applied.xhtml</display-name>
+  <from-view-id>/applied.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>logout</from-outcome>
+   <to-view-id>/exit.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+   <navigation-rule>
+   <display-name>appliedcheck.xhtml</display-name>
+  <from-view-id>/appliedcheck.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>logout</from-outcome>
+   <to-view-id>/exit.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+ 
+    <navigation-rule>
+   <display-name>appliedcheck.xhtml</display-name>
+  <from-view-id>/appliedcheck.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/welcome.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+ 
+   <navigation-rule>
+   <display-name>welcome.xhtml</display-name>
+  <from-view-id>/welcome.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>logout</from-outcome>
+   <to-view-id>/exit.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+   <navigation-rule>
+   <display-name>welcomeemployer.xhtml</display-name>
+  <from-view-id>/welcomeemployer.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>logout</from-outcome>
+   <to-view-id>/exit.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+   <navigation-rule>
+   <display-name>jobresults.xhtml</display-name>
+  <from-view-id>/jobresults.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>logout</from-outcome>
+   <to-view-id>/exit.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  <navigation-rule>
+   <display-name>applied.xhtml</display-name>
+  <from-view-id>/applied.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>true</from-outcome>
+   <to-view-id>/appliedcheck.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+
+ 
+ 
+ 
+ 
+ <navigation-rule>
+  <display-name>register.xhtml</display-name>
+  <from-view-id>/register.xhtml</from-view-id>
+  <navigation-case>
+      
+	       <from-outcome>true</from-outcome>
+   <to-view-id>/registered.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+  <navigation-rule>
+  <display-name>register.xhtml</display-name>
+  <from-view-id>/register.xhtml</from-view-id>
+  <navigation-case>
+	       <from-outcome>login</from-outcome>
+   <to-view-id>/login.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+  <navigation-rule>
+  <display-name>register.xhtml</display-name>
+  <from-view-id>/register.xhtml</from-view-id>
+  <navigation-case>
+	       <from-outcome>Exists</from-outcome>
+   <to-view-id>/registerfail.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  <navigation-rule>
+  <display-name>register.xhtml</display-name>
+  <from-view-id>/register.xhtml</from-view-id>
+  <navigation-case>
+	       <from-outcome>test</from-outcome>
+   <to-view-id>/test.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  <navigation-rule>
+  <display-name>test.xhtml</display-name>
+  <from-view-id>/test.xhtml</from-view-id>
+  <navigation-case>
+	       <from-outcome>back</from-outcome>
+   <to-view-id>/register.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+    <navigation-rule>
+  <display-name>registerfail.xhtml</display-name>
+  <from-view-id>/registerfail.xhtml</from-view-id>
+  <navigation-case>
+	       <from-outcome>back</from-outcome>
+      <to-view-id>/register.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+ <navigation-rule>
+   <display-name>registered.xhtml</display-name>
+  <from-view-id>/registered.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>loginnow</from-outcome>
+   <to-view-id>/login.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+ 
+     <navigation-rule>
+  <display-name>profile.xhtml</display-name>
+  <from-view-id>/profile.xhtml</from-view-id>
+  <navigation-case>
+	       <from-outcome>back</from-outcome>
+      <to-view-id>/welcome.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+   <navigation-rule>
+   <display-name>profile.xhtml</display-name>
+  <from-view-id>/profile.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>logout</from-outcome>
+   <to-view-id>/exit.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+  <navigation-rule>
+  <display-name>profile.xhtml</display-name>
+  <from-view-id>/profile.xhtml</from-view-id>
+  <navigation-case>
+	       <from-outcome>update</from-outcome>
+      <to-view-id>/profileupdated.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+   <navigation-rule>
+  <display-name>profile.xhtml</display-name>
+  <from-view-id>/profile.xhtml</from-view-id>
+  <navigation-case>
+	       <from-outcome>fail</from-outcome>
+      <to-view-id>/profileupdatefail.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+   <navigation-rule>
+  <display-name>profileupdatefail.xhtml</display-name>
+  <from-view-id>/profileupdatefail.xhtml</from-view-id>
+  <navigation-case>
+	       <from-outcome>back</from-outcome>
+      <to-view-id>/profile.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+   <navigation-rule>
+  <display-name>profileupdated.xhtml</display-name>
+  <from-view-id>/profileupdated.xhtml</from-view-id>
+  <navigation-case>
+	       <from-outcome>back</from-outcome>
+      <to-view-id>/profile.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+   <navigation-rule>
+   <display-name>profile.xhtml</display-name>
+  <from-view-id>/profile.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>true</from-outcome>
+   <to-view-id>/appliedcheck.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+  
+      <navigation-rule>
+  <display-name>profileemployer.xhtml</display-name>
+  <from-view-id>/profileemployer.xhtml</from-view-id>
+  <navigation-case>
+	       <from-outcome>back</from-outcome>
+      <to-view-id>/welcomeemployer.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+   <navigation-rule>
+   <display-name>profileemployer.xhtml</display-name>
+  <from-view-id>/profileemployer.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>logout</from-outcome>
+   <to-view-id>/exit.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+   <navigation-rule>
+   <display-name>profileemployer.xhtml</display-name>
+  <from-view-id>/profileemployer.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>true</from-outcome>
+   <to-view-id>/jobsaddedcheck.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule> 
+ 
+ 
+ 
+  <navigation-rule>
+   <display-name>profileemployer.xhtml</display-name>
+  <from-view-id>/profileemployer.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>update</from-outcome>
+   <to-view-id>/employerprofileupdated.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule> 
+ 
+ 
+  <navigation-rule>
+   <display-name>profileemployer.xhtml</display-name>
+  <from-view-id>/profileemployer.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>fail</from-outcome>
+   <to-view-id>/employerprofileupdatefail.xhtml</to-view-id>
+  </navigation-case> 
+ </navigation-rule>
+ 
+ 
+ <navigation-rule>
+   <display-name>employerprofileupdatefail.xhtml</display-name>
+  <from-view-id>/employerprofileupdatefail.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/profileemployer.xhtml</to-view-id>
+  </navigation-case> 
+ </navigation-rule>
+ 
+ 
+ 
+ 
+  <navigation-rule>
+   <display-name>employerprofileupdated.xhtml</display-name>
+  <from-view-id>/employerprofileupdated.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/profileemployer.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule> 
+ 
+ 
+ 
+  <navigation-rule> 
+   <display-name>jobsaddedcheck.xhtml</display-name>
+  <from-view-id>/jobsaddedcheck.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/profileemployer.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+   <navigation-rule> 
+   <display-name>jobsaddedcheck.xhtml</display-name>
+  <from-view-id>/jobsaddedcheck.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>logout</from-outcome>
+   <to-view-id>/exit.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+ 
+ 
+</faces-config>

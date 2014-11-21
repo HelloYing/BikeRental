@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+    <ui:define name="content">
+        <h:form>
+            <h:outputText value="Find Candidates: "></h:outputText>               	
+        
+            <h:panelGrid columns="2">
+               	
+               	<h:outputText value="Title"></h:outputText>
+                <h:inputText value="#{candidateBean.title}"></h:inputText>
+                
+                <h:outputText value="Location"></h:outputText>
+                <h:inputText value="#{candidateBean.location}"></h:inputText>
+                
+                <h:outputText value="Pay"></h:outputText>
+                <h:inputText value="#{candidateBean.pay}"></h:inputText>
+                
+                <h:outputText value="Technology"></h:outputText>
+                <h:inputText value="#{candidateBean.technology}"></h:inputText>
+
+            </h:panelGrid>
+            
+            <h:commandButton value="Find" action="#{candidateBean.find}"></h:commandButton>
+            <h:commandButton value="Back" action="back"></h:commandButton>            
+                        
+            
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>

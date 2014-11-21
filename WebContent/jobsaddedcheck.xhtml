@@ -1,0 +1,48 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+    <ui:define name="content">
+        <h:form>
+            <h:outputText value="Jobs Added by #{jobsAddedBean.user}"></h:outputText>
+               <br />
+              <br />
+               
+					<ui:repeat value="#{jobsAddedBean.jobs}" var="x">
+               	    <h:outputText value="Job:"></h:outputText>
+               	    
+               	
+               	        <h:panelGrid columns="2">
+
+               	    		<h:outputText value="Title:"></h:outputText>
+              				<h:outputText value="#{x[0]}" />
+              			
+              				
+              				<h:outputText value="Location:"></h:outputText>
+              				<h:outputText value="#{x[1]}" />
+              				
+              				<h:outputText value="Pay:"></h:outputText>
+              				<h:outputText value="#{x[2]}" />
+
+              				<h:outputText value="Technology:"></h:outputText>
+              				<h:outputText value="#{x[3]}" />
+              				<br />
+              				
+              				
+              			</h:panelGrid>
+          		
+               	    </ui:repeat>
+            
+            <h:commandButton value="Logout" action="logout"></h:commandButton> 
+            <h:commandButton value="Back" action="back"></h:commandButton>            
+                       
+            
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>

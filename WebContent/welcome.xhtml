@@ -1,0 +1,44 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+    <ui:define name="content">
+    
+      <h:form>
+            <h:panelGrid columns="2">
+                <h:outputText value="Title"></h:outputText>
+                <h:inputText value="#{welcomeBean.title}"></h:inputText>
+                <h:outputText value="Location"></h:outputText>
+                
+				<h:selectOneMenu value="#{welcomeBean.location}">
+   				<f:selectItem itemValue="Columbus" itemLabel="Columbus" />
+   				<f:selectItem itemValue="Cincinnati" itemLabel="Cincinnati" />
+   				<f:selectItem itemValue="OH" itemLabel="OH" />
+   				<f:selectItem itemValue="SFO" itemLabel="SFO" />
+   				<f:selectItem itemValue="Dallas" itemLabel="Dallas" />
+   				   				<f:selectItem itemValue="Austin" itemLabel="Austin" />
+   				   				<f:selectItem itemValue="Florida" itemLabel="Florida" />
+   				   				<f:selectItem itemValue="New York" itemLabel="New York" />
+   				   				<f:selectItem itemValue="D.C." itemLabel="D.C." />
+   				   				<f:selectItem itemValue="Arizona" itemLabel="Arizona" />
+   				
+   				
+				</h:selectOneMenu>
+				
+            </h:panelGrid>
+            
+            <h:commandButton value="Search" action="#{welcomeBean.search}"></h:commandButton>
+            <h:commandButton value="Logout" action="logout"></h:commandButton>
+            <h:commandButton value="View Profile" action="#{welcomeBean.profile}"></h:commandButton>            
+       
+        </h:form>
+        
+        
+    </ui:define>
+</ui:composition>
+</html>
