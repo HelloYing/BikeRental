@@ -226,9 +226,9 @@
   </PROCESS-ITEM>
   <PROCESS-ITEM ID="rules:#register.xhtml:2" NAME="item2"
    PATH="/register.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="Exists::#registerfail.xhtml" NAME="output"
-    PATH="/registerfail.xhtml" TARGET="rules:#registerfail.xhtml"
-    TITLE="Exists" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="response::#registerres.xhtml" NAME="output"
+    PATH="/registerres.xhtml" TARGET="rules:#registerres.xhtml"
+    TITLE="response" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
   <PROCESS-ITEM ID="rules:#register.xhtml:3" NAME="item3"
    PATH="/register.xhtml" model-entity="JSFProcessItem">
@@ -243,10 +243,10 @@
     PATH="/register.xhtml" TARGET="rules:#register.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#registerfail.xhtml"
-  PATH="/registerfail.xhtml" SHAPE="256,321,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#registerfail.xhtml:0" NAME="item"
-   PATH="/registerfail.xhtml" model-entity="JSFProcessItem">
+ <PROCESS-ITEM NAME="rules:#registerres.xhtml" PATH="/registerres.xhtml"
+  SHAPE="256,321,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#registerres.xhtml:0" NAME="item"
+   PATH="/registerres.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="back::#register.xhtml" NAME="output"
     PATH="/register.xhtml" TARGET="rules:#register.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>

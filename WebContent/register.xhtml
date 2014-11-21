@@ -10,33 +10,21 @@
     <ui:define name="content">
         <h:form>
             <h:panelGrid columns="2">
-                <h:outputText id = "o1" value="Name"></h:outputText>
-                <h:inputText id = "i1" value="#{registerBean.name}"></h:inputText>
+                <h:outputText id = "o1" value="Email"></h:outputText>
+                <h:inputText id = "i1" value="#{registerBean.email}"></h:inputText>
                 <h:outputText  id = "o2" value="Password"></h:outputText>
                 <h:inputSecret  id = "i2" value="#{registerBean.password}"></h:inputSecret>
-				<h:outputText  id = "o3" value="#{registerBean.valid}"></h:outputText>
+				<h:outputText  id = "o3" value="Confirmed Password"></h:outputText>
+                <h:inputSecret  id = "i3" value="#{registerBean.conpassword}"></h:inputSecret>
                 
             </h:panelGrid>
             
-            <h:commandButton value="Is Name Valid?" style= "position: absolute; left: 300px; top: 59px;">
-            	            <f:ajax execute = "i1" render = "o3"></f:ajax>
-            </h:commandButton>
-            
-            <h:graphicImage name="images/Register.gif" width="70" height="30" style= "position: 
-            absolute; left: 300px; top: 85px;"/>
-            
-            
-            <h:commandButton value="Register" action="#{registerBean.userName}" style= "position: static; 
+            <h:commandButton value="Register" action="response" style= "position: static; 
             left: 200px; top: 100px; width: 100px; height: 100px"></h:commandButton>
             
             <h:commandButton value="Go to Login" action="login" style= "position: static; 
             left: 180px; top: 130px; width: 100px; height: 100px"></h:commandButton>
-            
-            <h:selectOneRadio value="#{registerBean.selection}">
-   				<f:selectItem itemValue="Employer" itemLabel="Employer" />
-   				<f:selectItem itemValue="Employee" itemLabel="Employee" />
-   			</h:selectOneRadio>
-   			
+               			
    		    <h:commandButton value="Test" action="test"></h:commandButton>
    			
             
