@@ -4,20 +4,19 @@
   SHAPE="32,17,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#login.xhtml:0" NAME="item"
    PATH="/login.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="Employee::#welcome.xhtml" NAME="output"
-    PATH="/welcome.xhtml" TARGET="rules:#welcome.xhtml" TITLE="Employee" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="1::#welcome.xhtml" NAME="output"
+    PATH="/welcome.xhtml" TARGET="rules:#welcome.xhtml" TITLE="1" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
   <PROCESS-ITEM ID="rules:#login.xhtml:1" NAME="item1"
    PATH="/login.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="Employer::#welcomeemployer.xhtml"
-    NAME="output" PATH="/welcomeemployer.xhtml"
-    TARGET="rules:#welcomeemployer.xhtml" TITLE="Employer" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="2::#welcomeemployer.xhtml" NAME="output"
+    PATH="/welcomeemployer.xhtml" TARGET="rules:#welcomeemployer.xhtml"
+    TITLE="2" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
   <PROCESS-ITEM ID="rules:#login.xhtml:2" NAME="item2"
    PATH="/login.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="false::#loginfail.xhtml" NAME="output"
-    PATH="/loginfail.xhtml" TARGET="rules:#loginfail.xhtml"
-    TITLE="false" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="0::#loginfail.xhtml" NAME="output"
+    PATH="/loginfail.xhtml" TARGET="rules:#loginfail.xhtml" TITLE="0" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
   <PROCESS-ITEM ID="rules:#login.xhtml:3" NAME="item3"
    PATH="/login.xhtml" model-entity="JSFProcessItem">
