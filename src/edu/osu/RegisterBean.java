@@ -1,8 +1,5 @@
 package edu.osu;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.ejb.EJB;
 
 import examples.cse769.EJB.Service.PeopleService;

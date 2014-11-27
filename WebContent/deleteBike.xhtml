@@ -10,11 +10,18 @@
     <ui:define name="content">
         <h:form>
             <h:panelGrid columns="2">
-               	<h:outputText value="No candidates found.."></h:outputText>
+               
+               	
+               	<h:outputText value="Enter bike id"></h:outputText>
+                <h:inputText value="#{BikeBean.id}"></h:inputText>
+                
 
             </h:panelGrid>
             
-            <h:commandButton value="Back" action="back"></h:commandButton>
+             <h:commandButton value="delete" action="#{BikeBean.deleteBike()}"></h:commandButton>
+               <h:commandButton value="Back" action="back"></h:commandButton>          
+                   
+            
         </h:form>
     </ui:define>
 </ui:composition>

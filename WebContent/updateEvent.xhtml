@@ -9,24 +9,22 @@
 <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
     <ui:define name="content">
         <h:form>
+        <h:outputText value="#{BikeBean.message}"></h:outputText>
             <h:panelGrid columns="2">
                
                	
-               	<h:outputText value="Title"></h:outputText>
-                <h:inputText value="#{addBean.title}"></h:inputText>
+               	<h:outputText value="id"></h:outputText>
+                <h:inputText value="#{RentBean.id}"></h:inputText>
                 
-                <h:outputText value="Location"></h:outputText>
-                <h:inputText value="#{addBean.location}"></h:inputText>
+                <h:outputText value="damage fee"></h:outputText>
+                <h:inputText value="#{RentBean.damagefee}"></h:inputText>
                 
-                <h:outputText value="Pay"></h:outputText>
-                <h:inputText value="#{addBean.pay}"></h:inputText>
-                
-                <h:outputText value="Technology"></h:outputText>
-                <h:inputText value="#{addBean.technology}"></h:inputText>
+                 <h:outputText value="late fee"></h:outputText>
+                <h:inputText value="#{RentBean.latefee}"></h:inputText>
 
             </h:panelGrid>
             
-            <h:commandButton value="Add" action="#{addBean.add}"></h:commandButton>
+             <h:commandButton value="Update Rent" action="#{RentBean.updateRent()}"></h:commandButton>
             <h:commandButton value="Back" action="back"></h:commandButton>            
                    
             

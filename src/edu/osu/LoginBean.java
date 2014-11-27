@@ -20,7 +20,7 @@ public class LoginBean
 	private int id;
     private String email;
     private String password;
-    private String name;
+    private int point;
 
 	public String login() {
 
@@ -47,6 +47,9 @@ public class LoginBean
 		{
 				
 			id=res[1];
+		}
+		if(res[0]==1){
+			point=res[2];
 		}
 		return ""+res[0];
 	}
@@ -75,8 +78,11 @@ public class LoginBean
 	        this.password = password;
 	}
 	
-	public String getName(){
-		return name;
+	public int getPoint(){
+		return point;
+	}
+	public void setPoint(int point){
+		this.point=point;
 	}
 	
 }

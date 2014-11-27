@@ -1,0 +1,31 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+    <ui:define name="content">
+        <h:form>
+        
+        <h:panelGrid columns="4">
+            <h:commandButton value="Update Bike" action="updateBike"></h:commandButton>
+            <h:commandButton value="Add bike" action="addBike"></h:commandButton>
+            <h:commandButton value="Delete bike" action="deleteBike"></h:commandButton>
+            <h:commandButton value="Search bike" action="searchBike"></h:commandButton>
+           
+           <h:commandButton value="Search Rent" action="searchRent"></h:commandButton>
+           <h:commandButton value="Update Rent" action="updateRent"></h:commandButton>
+		   <h:commandButton value="Post Event" action="postEvent"></h:commandButton>
+         
+         </h:panelGrid>
+                
+         <h:commandButton value="Back" action="back"></h:commandButton>    
+               	           
+            
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>

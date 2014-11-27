@@ -1,5 +1,8 @@
 package edu.osu;
 
+import java.sql.Date;
+import java.text.SimpleDateFormat;
+
 public class CheckInput {
 	public boolean checkEmail(String email){
 		if(true){
@@ -16,5 +19,13 @@ public class CheckInput {
 			return false;
 		}
 	}
-
+	
+	public boolean checkDate(String date){
+		if(true){
+			return true;
+		}else{
+			return false;
+		}
+	}
+	
 }

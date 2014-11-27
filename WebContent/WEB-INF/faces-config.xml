@@ -3,38 +3,29 @@
  xmlns:xi="http://www.w3.org/2001/XInclude"
  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facesconfig_2_0.xsd">
  <managed-bean>
+  <managed-bean-name>BikeBean</managed-bean-name>
+  <managed-bean-class>edu.osu.BikeBean</managed-bean-class>
+  <managed-bean-scope>application</managed-bean-scope>
+ </managed-bean>
+ 
+ 
+ <managed-bean>
   <managed-bean-name>loginBean</managed-bean-name>
   <managed-bean-class>edu.osu.LoginBean</managed-bean-class>
   <managed-bean-scope>application</managed-bean-scope>
  </managed-bean>
+ 
+ 
  <managed-bean>
   <managed-bean-name>registerBean</managed-bean-name>
   <managed-bean-class>edu.osu.RegisterBean</managed-bean-class>
   <managed-bean-scope>application</managed-bean-scope>
  </managed-bean>
+ 
+ 
  <managed-bean>
-  <managed-bean-name>welcomeBean</managed-bean-name>
-  <managed-bean-class>edu.osu.WelcomeBean</managed-bean-class>
-  <managed-bean-scope>application</managed-bean-scope>
-  <managed-property>
-   <property-name>logBean</property-name>
-   <property-class>edu.osu.LoginBean</property-class>
-   <value>#{loginBean}</value>
-  </managed-property>
-  <managed-property>
-   <property-name>profileEmployerBean</property-name>
-   <property-class>edu.osu.ProfileEmployerBean</property-class>
-   <value>#{profileEmployerBean}</value>
-  </managed-property>
-  <managed-property>
-   <property-name>profileBean</property-name>
-   <property-class>edu.osu.ProfileBean</property-class>
-   <value>#{profileBean}</value>
-  </managed-property>
- </managed-bean>
- <managed-bean>
-  <managed-bean-name>jobsAppliedBean</managed-bean-name>
-  <managed-bean-class>edu.osu.JobsAppliedBean</managed-bean-class>
+  <managed-bean-name>usermainBean</managed-bean-name>
+  <managed-bean-class>edu.osu.UsermainBean</managed-bean-class>
   <managed-bean-scope>application</managed-bean-scope>
   <managed-property>
    <property-name>logBean</property-name>
@@ -42,56 +33,26 @@
    <value>#{loginBean}</value>
   </managed-property>
  </managed-bean>
+ 
+ 
  <managed-bean>
-  <managed-bean-name>applyBean</managed-bean-name>
-  <managed-bean-class>edu.osu.ApplyBean</managed-bean-class>
-  <managed-bean-scope>application</managed-bean-scope>
-  <managed-property>
-   <property-name>welBean</property-name>
-   <property-class>edu.osu.WelcomeBean</property-class>
-   <value>#{welcomeBean}</value>
-  </managed-property>
-  <managed-property>
-   <property-name>logBean</property-name>
-   <property-class>edu.osu.LoginBean</property-class>
-   <value>#{loginBean}</value>
-  </managed-property>
- </managed-bean>
- <managed-bean>
-  <managed-bean-name>addBean</managed-bean-name>
-  <managed-bean-class>edu.osu.AddBean</managed-bean-class>
+  <managed-bean-name>availablebikeBean</managed-bean-name>
+  <managed-bean-class>edu.osu.AvailableBikeBean</managed-bean-class>
   <managed-bean-scope>application</managed-bean-scope>
   <managed-property>
    <property-name>logBean</property-name>
    <property-class>edu.osu.LoginBean</property-class>
    <value>#{loginBean}</value>
   </managed-property>
- </managed-bean>
- <managed-bean>
-  <managed-bean-name>profileEmployerBean</managed-bean-name>
-  <managed-bean-class>edu.osu.ProfileEmployerBean</managed-bean-class>
-  <managed-bean-scope>application</managed-bean-scope>
+  
+  
   <managed-property>
-   <property-name>logBean</property-name>
-   <property-class>edu.osu.LoginBean</property-class>
-   <value>#{loginBean}</value>
+   <property-name>usermainBean</property-name>
+   <property-class>edu.osu.UsermainBean</property-class>
+   <value>#{usermainBean}</value>
   </managed-property>
  </managed-bean>
- <managed-bean>
-  <managed-bean-name>jobsAddedBean</managed-bean-name>
-  <managed-bean-class>edu.osu.JobsAddedBean</managed-bean-class>
-  <managed-bean-scope>application</managed-bean-scope>
-  <managed-property>
-   <property-name>logBean</property-name>
-   <property-class>edu.osu.LoginBean</property-class>
-   <value>#{loginBean}</value>
-  </managed-property>
- </managed-bean>
- <managed-bean>
-  <managed-bean-name>candidateBean</managed-bean-name>
-  <managed-bean-class>edu.osu.CandidateBean</managed-bean-class>
-  <managed-bean-scope>application</managed-bean-scope>
- </managed-bean>
+ 
  
  <managed-bean>
   <managed-bean-name>profileBean</managed-bean-name>
@@ -103,12 +64,25 @@
    <value>#{loginBean}</value>
   </managed-property>
  </managed-bean>
+ 
+  <managed-bean>
+  <managed-bean-name>EventBean</managed-bean-name>
+  <managed-bean-class>edu.osu.EventBean</managed-bean-class>
+  <managed-bean-scope>application</managed-bean-scope>
+ </managed-bean>
+ 
+ <managed-bean>
+  <managed-bean-name>RentBean</managed-bean-name>
+  <managed-bean-class>edu.osu.RentBean</managed-bean-class>
+  <managed-bean-scope>application</managed-bean-scope>
+ </managed-bean>
+ 
  <navigation-rule>
   <display-name>login.xhtml</display-name>
   <from-view-id>/login.xhtml</from-view-id>
   <navigation-case>
    <from-outcome>1</from-outcome>
-   <to-view-id>/welcome.xhtml</to-view-id>
+   <to-view-id>/usermain.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
  <navigation-rule>
@@ -116,7 +90,7 @@
   <from-view-id>/login.xhtml</from-view-id>
   <navigation-case>
    <from-outcome>2</from-outcome>
-   <to-view-id>/welcomeemployer.xhtml</to-view-id>
+   <to-view-id>/staffMain.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
  <navigation-rule>
@@ -136,35 +110,99 @@
   </navigation-case>
  </navigation-rule>
  <navigation-rule>
-  <display-name>welcome.xhtml</display-name>
-  <from-view-id>/welcome.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>true</from-outcome>
-   <to-view-id>/jobresults.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>welcome.xhtml</display-name>
-  <from-view-id>/welcome.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>false</from-outcome>
-   <to-view-id>/noresults.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>welcomeemployer.xhtml</display-name>
-  <from-view-id>/welcomeemployer.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>add</from-outcome>
-   <to-view-id>/addjob.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>exit.xhtml</display-name>
-  <from-view-id>/exit.xhtml</from-view-id>
+  <display-name>usermain.xhtml</display-name>
+  <from-view-id>/usermain.xhtml</from-view-id>
   <navigation-case>
    <from-outcome>logout</from-outcome>
    <to-view-id>/login.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <display-name>usermain.xhtml</display-name>
+  <from-view-id>/usermain.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>allbikes</from-outcome>
+   <to-view-id>/bikelist.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <display-name>bikelist.xhtml</display-name>
+  <from-view-id>/bikelist.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/usermain.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <display-name>usermain.xhtml</display-name>
+  <from-view-id>/usermain.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>available</from-outcome>
+   <to-view-id>/availablebikes.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <display-name>availablebikes.xhtml</display-name>
+  <from-view-id>/availablebikes.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/usermain.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <display-name>usermain.xhtml</display-name>
+  <from-view-id>/usermain.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>noavailable</from-outcome>
+   <to-view-id>/nobikes.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <display-name>nobikes.xhtml</display-name>
+  <from-view-id>/nobikes.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/usermain.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <display-name>usermain.xhtml</display-name>
+  <from-view-id>/usermain.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>profile</from-outcome>
+   <to-view-id>/profile.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <display-name>profile.xhtml</display-name>
+  <from-view-id>/profile.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/usermain.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <display-name>profile.xhtml</display-name>
+  <from-view-id>/profile.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>profileresult</from-outcome>
+   <to-view-id>/profileresult.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <display-name>profileresult.xhtml</display-name>
+  <from-view-id>/profileresult.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/usermain.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <display-name>usermain.xhtml</display-name>
+  <from-view-id>/usermain.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>false</from-outcome>
+   <to-view-id>/noresults.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
  <navigation-rule>
@@ -173,190 +211,6 @@
   <navigation-case>
    <from-outcome>register</from-outcome>
    <to-view-id>/register.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>welcome.xhtml</display-name>
-  <from-view-id>/welcome.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>profile</from-outcome>
-   <to-view-id>/profile.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>welcomeemployer.xhtml</display-name>
-  <from-view-id>/welcomeemployer.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>profile</from-outcome>
-   <to-view-id>/profileemployer.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>welcomeemployer.xhtml</display-name>
-  <from-view-id>/welcomeemployer.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>find</from-outcome>
-   <to-view-id>/findcandidates.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>findcandidates.xhtml</display-name>
-  <from-view-id>/findcandidates.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/welcomeemployer.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>findcandidates.xhtml</display-name>
-  <from-view-id>/findcandidates.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>found</from-outcome>
-   <to-view-id>/candidateresults.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>findcandidates.xhtml</display-name>
-  <from-view-id>/findcandidates.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>false</from-outcome>
-   <to-view-id>/nocandidatesfound.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>nocandidatesfound.xhtml</display-name>
-  <from-view-id>/nocandidatesfound.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/findcandidates.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>candidateresults.xhtml</display-name>
-  <from-view-id>/candidateresults.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/findcandidates.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>addjob.xhtml</display-name>
-  <from-view-id>/addjob.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>true</from-outcome>
-   <to-view-id>/jobadded.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>addjob.xhtml</display-name>
-  <from-view-id>/addjob.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/welcomeemployer.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>jobadded.xhtml</display-name>
-  <from-view-id>/jobadded.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/welcomeemployer.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>noresults.xhtml</display-name>
-  <from-view-id>/noresults.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/welcome.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>jobresults.xhtml</display-name>
-  <from-view-id>/jobresults.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>true</from-outcome>
-   <to-view-id>/applied.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>jobresults.xhtml</display-name>
-  <from-view-id>/jobresults.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/welcome.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>applied.xhtml</display-name>
-  <from-view-id>/applied.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>logout</from-outcome>
-   <to-view-id>/exit.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>applied.xhtml</display-name>
-  <from-view-id>/applied.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>logout</from-outcome>
-   <to-view-id>/exit.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>appliedcheck.xhtml</display-name>
-  <from-view-id>/appliedcheck.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>logout</from-outcome>
-   <to-view-id>/exit.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>appliedcheck.xhtml</display-name>
-  <from-view-id>/appliedcheck.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/welcome.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>welcome.xhtml</display-name>
-  <from-view-id>/welcome.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>logout</from-outcome>
-   <to-view-id>/exit.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>welcomeemployer.xhtml</display-name>
-  <from-view-id>/welcomeemployer.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>logout</from-outcome>
-   <to-view-id>/exit.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>jobresults.xhtml</display-name>
-  <from-view-id>/jobresults.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>logout</from-outcome>
-   <to-view-id>/exit.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>applied.xhtml</display-name>
-  <from-view-id>/applied.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>true</from-outcome>
-   <to-view-id>/appliedcheck.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>register.xhtml</display-name>
-  <from-view-id>/register.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>true</from-outcome>
-   <to-view-id>/registered.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
  <navigation-rule>
@@ -376,19 +230,11 @@
   </navigation-case>
  </navigation-rule>
  <navigation-rule>
-  <display-name>register.xhtml</display-name>
-  <from-view-id>/register.xhtml</from-view-id>
+  <display-name>registerres.xhtml</display-name>
+  <from-view-id>/registerres.xhtml</from-view-id>
   <navigation-case>
-   <from-outcome>test</from-outcome>
-   <to-view-id>/test.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>test.xhtml</display-name>
-  <from-view-id>/test.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/register.xhtml</to-view-id>
+   <from-outcome>login</from-outcome>
+   <to-view-id>/login.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
  <navigation-rule>
@@ -396,143 +242,131 @@
   <from-view-id>/registerres.xhtml</from-view-id>
   <navigation-case>
    <from-outcome>back</from-outcome>
-   <to-view-id>/register.xhtml</to-view-id>
+   <to-view-id>/registerres.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
+ 
+ 
  <navigation-rule>
-  <display-name>registered.xhtml</display-name>
-  <from-view-id>/registered.xhtml</from-view-id>
+  <display-name>staffMain.xhtml</display-name>
+  <from-view-id>/staffMain.xhtml</from-view-id>
   <navigation-case>
-   <from-outcome>loginnow</from-outcome>
-   <to-view-id>/login.xhtml</to-view-id>
+   <from-outcome>updateBike</from-outcome>
+   <to-view-id>/updateBike.xhtml</to-view-id>
   </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>profile.xhtml</display-name>
-  <from-view-id>/profile.xhtml</from-view-id>
   <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/welcome.xhtml</to-view-id>
+   <from-outcome>updateEvent</from-outcome>
+   <to-view-id>/updateEvent.xhtml</to-view-id>
   </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>profile.xhtml</display-name>
-  <from-view-id>/profile.xhtml</from-view-id>
   <navigation-case>
-   <from-outcome>logout</from-outcome>
-   <to-view-id>/exit.xhtml</to-view-id>
+   <from-outcome>addBike</from-outcome>
+   <to-view-id>/addBike.xhtml</to-view-id>
   </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>profile.xhtml</display-name>
-  <from-view-id>/profile.xhtml</from-view-id>
   <navigation-case>
-   <from-outcome>update</from-outcome>
-   <to-view-id>/profileupdated.xhtml</to-view-id>
+   <from-outcome>deleteBike</from-outcome>
+   <to-view-id>/deleteBike.xhtml</to-view-id>
   </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>profile.xhtml</display-name>
-  <from-view-id>/profile.xhtml</from-view-id>
   <navigation-case>
-   <from-outcome>fail</from-outcome>
-   <to-view-id>/profileupdatefail.xhtml</to-view-id>
+   <from-outcome>searchBike</from-outcome>
+   <to-view-id>/staffsearchBikes.xhtml</to-view-id>
   </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>profileupdatefail.xhtml</display-name>
-  <from-view-id>/profileupdatefail.xhtml</from-view-id>
   <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/profile.xhtml</to-view-id>
+   <from-outcome>postEvent</from-outcome>
+   <to-view-id>/postEvent.xhtml</to-view-id>
+  </navigation-case>
+  <navigation-case>
+   <from-outcome>updateRent</from-outcome>
+   <to-view-id>/updateRent.xhtml</to-view-id>
+  </navigation-case>
+  <navigation-case>
+   <from-outcome>searchRent</from-outcome>
+   <to-view-id>/searchRent.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
  <navigation-rule>
-  <display-name>profileupdated.xhtml</display-name>
-  <from-view-id>/profileupdated.xhtml</from-view-id>
+  <display-name>staffsearchBikes.xhtml</display-name>
+  <from-view-id>/staffsearchBikes.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>found</from-outcome>
+   <to-view-id>/searchBikeResult.xhtml</to-view-id>
+  </navigation-case>
   <navigation-case>
    <from-outcome>back</from-outcome>
-   <to-view-id>/profile.xhtml</to-view-id>
+   <to-view-id>/staffMain.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
  <navigation-rule>
-  <display-name>profile.xhtml</display-name>
-  <from-view-id>/profile.xhtml</from-view-id>
+  <display-name>staffsearchBikes.xhtml</display-name>
+  <from-view-id>/staffsearchBikes.xhtml</from-view-id>
   <navigation-case>
-   <from-outcome>true</from-outcome>
-   <to-view-id>/appliedcheck.xhtml</to-view-id>
+   <from-outcome>not found</from-outcome>
+   <to-view-id>/noResultFound.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
  <navigation-rule>
-  <display-name>profileemployer.xhtml</display-name>
-  <from-view-id>/profileemployer.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/welcomeemployer.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>profileemployer.xhtml</display-name>
-  <from-view-id>/profileemployer.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>logout</from-outcome>
-   <to-view-id>/exit.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>profileemployer.xhtml</display-name>
-  <from-view-id>/profileemployer.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>true</from-outcome>
-   <to-view-id>/jobsaddedcheck.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>profileemployer.xhtml</display-name>
-  <from-view-id>/profileemployer.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>update</from-outcome>
-   <to-view-id>/employerprofileupdated.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>profileemployer.xhtml</display-name>
-  <from-view-id>/profileemployer.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>fail</from-outcome>
-   <to-view-id>/employerprofileupdatefail.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>employerprofileupdatefail.xhtml</display-name>
-  <from-view-id>/employerprofileupdatefail.xhtml</from-view-id>
+  <display-name>noResultFound.xhtml</display-name>
+  <from-view-id>/noResultFound.xhtml</from-view-id>
   <navigation-case>
    <from-outcome>back</from-outcome>
-   <to-view-id>/profileemployer.xhtml</to-view-id>
+   <to-view-id>/staffsearchBikes.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
  <navigation-rule>
-  <display-name>employerprofileupdated.xhtml</display-name>
-  <from-view-id>/employerprofileupdated.xhtml</from-view-id>
+  <display-name>searchBikeResult.xhtml</display-name>
+  <from-view-id>/searchBikeResult.xhtml</from-view-id>
   <navigation-case>
    <from-outcome>back</from-outcome>
-   <to-view-id>/profileemployer.xhtml</to-view-id>
+   <to-view-id>/staffsearchBikes.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
  <navigation-rule>
-  <display-name>jobsaddedcheck.xhtml</display-name>
-  <from-view-id>/jobsaddedcheck.xhtml</from-view-id>
+  <display-name>updateBike.xhtml</display-name>
+  <from-view-id>/updateBike.xhtml</from-view-id>
   <navigation-case>
    <from-outcome>back</from-outcome>
-   <to-view-id>/profileemployer.xhtml</to-view-id>
+   <to-view-id>/staffMain.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
  <navigation-rule>
-  <display-name>jobsaddedcheck.xhtml</display-name>
-  <from-view-id>/jobsaddedcheck.xhtml</from-view-id>
+  <display-name>updateRent.xhtml</display-name>
+  <from-view-id>/updateBike.xhtml</from-view-id>
   <navigation-case>
-   <from-outcome>logout</from-outcome>
-   <to-view-id>/exit.xhtml</to-view-id>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/staffMain.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
+ <navigation-rule>
+  <display-name>addBike.xhtml</display-name>
+  <from-view-id>/addBike.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/staffMain.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <display-name>deleteBike.xhtml</display-name>
+  <from-view-id>/deleteBike.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/staffMain.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+<navigation-rule>
+  <display-name>searchRent.xhtml</display-name>
+  <from-view-id>/searchRent.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/staffMain.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <display-name>postEvent.xhtml</display-name>
+  <from-view-id>/postEvent.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/staffMain.xhtml</to-view-id>
+  </navigation-case>
+  </navigation-rule>
+ 
+ 
 </faces-config>

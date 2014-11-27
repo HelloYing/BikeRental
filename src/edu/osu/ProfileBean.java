@@ -3,18 +3,14 @@
  */
 package edu.osu;
 
-import java.io.File;
-import java.util.Arrays;
-
+import java.sql.Date;
 import javax.ejb.EJB;
 
-import examples.cse769.EJB.Service.JobApply;
-import examples.cse769.EJB.Service.HelloService;
-import examples.cse769.EJB.Service.JobListing;
-
+import examples.cse769.EJB.Service.*;
+import examples.cse769.EJB.Entity.*;
 
 /**
- * @author Reddiah
+ * @author Siwei
  *
  */
 public class ProfileBean
@@ -31,80 +27,57 @@ public class ProfileBean
 
 
 	@EJB 
-	private HelloService helloService;
+	private ProfileService profileService;
 	
-    public String getTitle() {
-		return title;
+	private String firstname;
+    public String getFirstname() {
+		return firstname;
+	}
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	private String lastname;
+    public String getLastname() {
+		return lastname;
+	}
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+	
+	private String phone;
+	public String getPhone() {
+		return phone;
+	}
+	public void setPhone(String phone) {
+		this.phone = phone;
+	}
+
+    private Date birthday;
+	public Date getBirthday() {
+		return birthday;
+	}
+	public void setBirthday(Date birthday) {
+		this.birthday = birthday;
+	}
+
+    private String address;
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
 	}
 
 
-	public void setTitle(String title) {
-		this.title = title;
+	public String update() {		
+		String ret = profileService.profile(logBean.getId(), firstname, lastname, phone, birthday, address);
+		if(ret=="true"){
+			return "Profile updates success.";
+		}else{
+			return "Profile updates failed, please try again.";
+		}
 	}
-
-
-	public String getLocation() {
-		return location;
-	}
-
-
-	public void setLocation(String location) {
-		this.location = location;
-	}
-
-
-	public String getPay() {
-		return pay;
-	}
-
-
-	public void setPay(String pay) {
-		this.pay = pay;
-	}
-
-
-	public String getTechnology() {
-		return technology;
-	}
-
-
-	public void setTechnology(String technology) {
-		this.technology = technology;
-	}
-
-
-	public String getUser() {
-		return user;
-	}
-
-
-	public void setUser(String user) {
-		this.user = user;
-	}
-
-
-	private String title;
-    private String location;
-    private String pay;
-    private String technology;
-    private String user;
-
-    //baluC
-   // private UploadedFile file;
-    
-    //baluC
-
-	public String update() {
-	    
-		
-		String ret = helloService.update(logBean.getName(), title, location, pay, technology);
-		if(ret.equalsIgnoreCase("success"))
-		return "update";
-		else
-			return "fail";
-
-	}
-
-
+	
 	
 }

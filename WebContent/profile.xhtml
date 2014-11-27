@@ -9,25 +9,26 @@
 <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
     <ui:define name="content">
         <h:form>
-                       	<h:outputText value="Employee Profile"></h:outputText>
+        <h:outputText value="User Profile"></h:outputText>
         
             <h:panelGrid columns="2">
-               	<h:outputText value="Title"></h:outputText>
-                <h:inputText value="#{profileBean.title}"></h:inputText>
-                <h:outputText value="Location"></h:outputText>
-                <h:inputText value="#{profileBean.location}"></h:inputText>
-                <h:outputText value="Technology"></h:outputText>
-                <h:inputText value="#{profileBean.technology}"></h:inputText>
-                <h:outputText value="Pay"></h:outputText>
-                <h:inputText value="#{profileBean.pay}"></h:inputText>
-                <h:outputText value="User"></h:outputText>
-                <h:inputText value="#{profileBean.user}"></h:inputText>
+                <h:outputText value="Email"></h:outputText>
+                <h:outputText value="#{logBean.email}"></h:outputText>
+               	<h:outputText value="Firstname"></h:outputText>
+                <h:inputText value="#{profileBean.firstname}"></h:inputText>
+                <h:outputText value="Lastname"></h:outputText>
+                <h:inputText value="#{profileBean.lastname}"></h:inputText>
+                <h:outputText value="Phone"></h:outputText>
+                <h:inputText value="#{profileBean.phone}"></h:inputText>
+                <h:outputText value="Birthday (Format is YYYY-MM-DD)"></h:outputText>
+                <h:inputText value="#{profileBean.birthday}"></h:inputText>
+                <h:outputText value="Address"></h:outputText>
+                <h:inputText value="#{profileBean.address}"></h:inputText>
+                <h:outputText value="Point"></h:outputText>
+                <h:outputText value="#{logBean.point}"></h:outputText>
             </h:panelGrid>
-  			
-            <h:commandButton value="Check Applied Jobs" action="#{jobsAppliedBean.jobsApplied}"></h:commandButton>
-            <h:commandButton value="Logout" action="logout"></h:commandButton>
             <h:commandButton value="Back" action="back"></h:commandButton>
-            <h:commandButton value="Update" action="#{profileBean.update}"></h:commandButton>
+            <h:commandButton value="Update" action="profileresult"></h:commandButton>
             
         </h:form>
     </ui:define>

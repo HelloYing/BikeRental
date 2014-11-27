@@ -1,0 +1,61 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+    <ui:define name="content">
+        <h:form>
+            <h:outputText value="Bikes Found: "></h:outputText>               	
+        
+               <br />
+              <br />
+               
+					<ui:repeat value="#{BikeBean.bikes}" var="bikes">
+               	    <h:outputText value="Bikes:"></h:outputText>
+               	    
+               	
+               	        <h:panelGrid columns="2">
+
+               	    		<h:outputText value="id:"></h:outputText>
+              				<h:outputText value="#{bikes.id}" />          			
+              				
+              				<h:outputText value="name:"></h:outputText>
+              				<h:outputText value="#{bikes.name}" />
+              				
+              				<h:outputText value="type:"></h:outputText>
+              				<h:outputText value="#{bikes.type}" />
+
+              				<h:outputText value="description:"></h:outputText>
+              				<h:outputText value="#{bikes.description}" />
+              				
+              				<h:outputText value="daily price:"></h:outputText>
+              				<h:outputText value="#{bikes.dailyprice}" />
+              				
+              				<h:outputText value="damage fee:"></h:outputText>
+              				<h:outputText value="#{bikes.damagefee}" />
+              				
+              				<h:outputText value="late fee:"></h:outputText>
+              				<h:outputText value="#{bikes.latefee}" />
+              				
+              				<h:outputText value="condition:"></h:outputText>
+              				<h:outputText value="#{bikes.condition}" />
+              				
+              				              				
+              				<br />
+              				
+              				
+              			</h:panelGrid>
+          		
+               	    </ui:repeat>
+            
+            <h:commandButton value="Back" action="back"></h:commandButton>            
+                        
+            
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>

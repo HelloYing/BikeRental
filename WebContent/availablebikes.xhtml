@@ -9,38 +9,44 @@
 <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
     <ui:define name="content">
         <h:form>
-           <h:outputText value="Jobs Applied By:  "></h:outputText> 
-  			<h:outputText value="#{loginBean.name}"></h:outputText>          
+            <h:outputText value="All Available Bikes: "></h:outputText>               	
+        
                <br />
               <br />
                
-					<ui:repeat value="#{jobsAppliedBean.jobs}" var="x">
-               	    <h:outputText value="Job:"></h:outputText>
+					<ui:repeat value="#{usermainBean.availablebikelist}" var="x">
+               	    <h:outputText value="Bike:"></h:outputText>
                	    
                	
                	        <h:panelGrid columns="2">
 
-               	    		<h:outputText value="Title:"></h:outputText>
+               	    		<h:outputText value="Name:"></h:outputText>
               				<h:outputText value="#{x[0]}" />          			
               				
-              				<h:outputText value="Location:"></h:outputText>
+              				<h:outputText value="Description:"></h:outputText>
               				<h:outputText value="#{x[1]}" />
               				
-              				<h:outputText value="Pay:"></h:outputText>
+              				<h:outputText value="Condition:"></h:outputText>
               				<h:outputText value="#{x[2]}" />
 
-              				<h:outputText value="Technology:"></h:outputText>
+              				<h:outputText value="Daily Price:"></h:outputText>
               				<h:outputText value="#{x[3]}" />
               				
-              				<h:outputText value="Employer:"></h:outputText>
+              				<h:outputText value="Late Fee:"></h:outputText>
               				<h:outputText value="#{x[4]}" />
               				
-              				<br />		
+              				<h:outputText value="Damage Fee:"></h:outputText>
+              				<h:outputText value="#{x[5]}" />
+              				
+              				<h:commandButton value="Rent" action="#{availablebikeBean.rent()}">
+              				<f:setPropertyActionListener target="#{availablebikeBean.bikeId}" value="#{x[6]}" />
+              				</h:commandButton> 
+              				             				
+              				<br />             				
               			</h:panelGrid>
           		
                	    </ui:repeat>
-            
-            <h:commandButton value="Logout" action="logout"></h:commandButton>
+            <h:outputText value="#{availablebikeBean.res}"></h:outputText> 
             <h:commandButton value="Back" action="back"></h:commandButton>            
                         
             

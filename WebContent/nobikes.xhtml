@@ -8,18 +8,10 @@
 
 <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
     <ui:define name="content">
-
-
-<h:form enctype="multipart/form-data" >
-<cp:inputFile id ="image" value ="#{profileBean.fileItem}" />
-       <h:commandButton value="upload" action="#{profileBean.upload}"></h:commandButton>
-
-       <h:commandButton value="Back" action="back"></h:commandButton>
-
-</h:form>
-
-        
-            
+        <h:form>
+            <h:outputText value="No bike is available, please change the price or the date."></h:outputText>               	
+            <h:commandButton value="Back" action="back"></h:commandButton>                        
+        </h:form>
     </ui:define>
 </ui:composition>
 </html>
