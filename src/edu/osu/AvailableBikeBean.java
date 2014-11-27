@@ -48,7 +48,15 @@ public class AvailableBikeBean {
 		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 		Date bin=new Date(sdf.parse(usermainBean.getBegDate()).getTime());
 		Date end=new Date(sdf.parse(usermainBean.getEndDate()).getTime());
-		res=rentService.insert(logBean.getId(), bikeId, usermainBean.getPrice(), bin, end);
+		int fee=(int)((end.getTime()-bin.getTime())/(24 * 60 * 60 * 1000))*(int)usermainBean.getPrice();
+		int ori=logBean.getPoint();
+		if(ori>=fee){
+			logBean.setPoint(ori-fee);
+			res=rentService.insert(logBean.getId(), bikeId, fee, bin, end);
+		}else{
+			res="Sorry, you don't have enough points.";
+		}
+		
 	}
 
 }

@@ -10,8 +10,11 @@
     <ui:define name="content">
     
       <h:form>
-          <h:outputText value="Welcome user #{loginBean.email} "></h:outputText>
-          <h:outputText value="Find Available Bikes"></h:outputText>
+          <h:panelGrid columns="2">
+              <h:outputText value="Welcome user #{loginBean.email} "></h:outputText>
+              <h:outputText value="You have #{loginBean.point} points "></h:outputText>         
+              <h:outputText value="Find Available Bikes"></h:outputText>
+          </h:panelGrid>
           <h:panelGrid columns="2">
                 <h:outputText id = "o1" value="Daily Price (input 3, 4 or 5)"></h:outputText>
                 <h:inputText id = "i1" value="#{usermainBean.price}"></h:inputText>
