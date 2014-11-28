@@ -12,6 +12,7 @@ public class RegisterBean
 {
 	@EJB
 	private PeopleService peopleService=new PeopleService();
+	
 	private String email;
 	private String password;
 	private String conpassword;

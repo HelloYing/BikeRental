@@ -23,6 +23,8 @@ public class UsermainBean
 	
 	@EJB
 	private BikeService bikeService=new BikeService();
+	@EJB
+	private RentService rentService=new RentService();
 	
 	private double price;
 	public double getPrice(){
@@ -105,7 +107,19 @@ public class UsermainBean
 			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 			Date bin=new Date(sdf.parse(begDate).getTime());
 			Date end=new Date(sdf.parse(endDate).getTime());
-			availablebikelist=bikeService.searchAvailableBike(price, bin, end);
+			ArrayList<BikeEntity> bikes=bikeService.searchAvailableBike(price);
+			for(BikeEntity bike: bikes){
+				if(rentService.searchAvailableBike(bike.getId(), bin, end)){
+					ArrayList<String> val=new ArrayList<String>();
+					val.add(bike.getName());
+					val.add(bike.getDescription());
+					val.add(""+bike.getCondition());
+					val.add(""+bike.getDailyprice());
+					val.add(""+bike.getLatefee());
+					val.add(""+bike.getDamagefee());
+					availablebikelist.add(val);
+				}
+			}
 			if(availablebikelist.size()==0){
 				return "noavailable";
 			}

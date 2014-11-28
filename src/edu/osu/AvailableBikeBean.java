@@ -11,6 +11,8 @@ import examples.cse769.EJB.Entity.*;
 public class AvailableBikeBean {
 	@EJB
 	private RentService rentService=new RentService();
+	@EJB
+	private PeopleService peopleService=new PeopleService();
 	
 	private LoginBean logBean;
 	public LoginBean getLogBean() {
@@ -51,8 +53,12 @@ public class AvailableBikeBean {
 		int fee=(int)((end.getTime()-bin.getTime())/(24 * 60 * 60 * 1000))*(int)usermainBean.getPrice();
 		int ori=logBean.getPoint();
 		if(ori>=fee){
-			logBean.setPoint(ori-fee);
-			res=rentService.insert(logBean.getId(), bikeId, fee, bin, end);
+			if(peopleService.updatePoint(logBean.getId(), fee)){
+				logBean.setPoint(ori-fee);
+				res=rentService.insert(logBean.getId(), bikeId, fee, bin, end);
+			}else{
+				res="Sorry, rent failed, please rent again.";
+			}						
 		}else{
 			res="Sorry, you don't have enough points.";
 		}
