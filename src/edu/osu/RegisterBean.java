@@ -53,9 +53,11 @@ public class RegisterBean
 		}
 		CheckInput checkInput=new CheckInput();
 		if(checkInput.checkEmail(email) && checkInput.checkPassword(password)){
-			this.setMessage("Register Successfully! Please Login.");
-			profileService.insert(0,email);
-			return peopleService.insert(email, password);
+			this.setMessage("Register Successfully! Please Login.");			
+			String res=peopleService.insert(email, password);
+			int peopleId=peopleService.searchUserByEmail(email).getId();
+			profileService.insert(peopleId,email);
+			return res;
 		}else if(!checkInput.checkEmail(email) && !checkInput.checkPassword(password)){
 			this.setMessage("Please use a valid email and a valid password.");
 			return "Please use a valid email and a valid password.";
