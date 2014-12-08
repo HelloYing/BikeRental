@@ -6,29 +6,29 @@
     xmlns:h="http://java.sun.com/jsf/html"
     xmlns:f="http://java.sun.com/jsf/core">
 
-<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
-    <ui:define name="content">
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="sideBar">
     
       <h:form>
           <h:panelGrid columns="2">
-              <h:outputText value="Welcome user #{loginBean.email} "></h:outputText>
+              <h:outputText value="Welcome user #{loginBean.email} " style="display:block; color:blue;margin-top:20px;margin-bottom:50px
+    		;margin-left:10px;"></h:outputText>
               <h:outputText value="You have #{loginBean.point} points "></h:outputText>         
-              <h:outputText value="Find Available Bikes"></h:outputText>
           </h:panelGrid>
-          <h:panelGrid columns="2">
-                <h:outputText id = "o1" value="Daily Price (input 3, 4 or 5)"></h:outputText>
-                <h:inputText id = "i1" value="#{usermainBean.price}"></h:inputText>
-                <h:outputText  id = "o2" value="Begin Date (Format is YYYY-MM-DD)"></h:outputText>
-                <h:inputText  id = "i2" value="#{usermainBean.begDate}"></h:inputText>
-				<h:outputText  id = "o3" value="End Date (Format is YYYY-MM-DD)"></h:outputText>
-                <h:inputText  id = "i3" value="#{usermainBean.endDate}"></h:inputText>                
-           </h:panelGrid>
-          <h:commandButton value="Submit" action="#{usermainBean.findAvailableBikes()}"></h:commandButton>          
-          <h:commandButton value="View Profile" action="#{usermainBean.profile()}"></h:commandButton> 
-          <h:commandButton value="View Bikes" action="#{usermainBean.viewBikes()}"></h:commandButton> 
-          <h:commandButton value="Logout" action="logout"></h:commandButton>                 
+         
+         <h:panelGrid columns="1" style="display:block; margin-left:50px;">
+          <h:commandButton value="Update Profile" action="#{profileBean.profile(loginBean.email)}"></h:commandButton>
+          <h:commandButton value="View Orders" action="#{RentBean.searchRentByUser(loginBean.email)}"></h:commandButton>           
+          <h:commandButton value="Rent Bike" action="rentBike"></h:commandButton> 
+          <h:commandButton value="Logout" action="logout"></h:commandButton>    
+          </h:panelGrid>             
         </h:form>
                 
     </ui:define>
+    
+    <ui:define name="mainBody">
+    	<h:graphicImage value="/resources/images/bike.jpeg"/>
+    </ui:define>
+    
 </ui:composition>
 </html>

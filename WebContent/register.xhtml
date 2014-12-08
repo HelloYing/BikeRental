@@ -6,10 +6,12 @@
     xmlns:h="http://java.sun.com/jsf/html"
     xmlns:f="http://java.sun.com/jsf/core">
 
-<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
-    <ui:define name="content">
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="sideBar">
         <h:form>
-            <h:panelGrid columns="2">
+        	
+        	<h:outputText id="message" value="#{registerBean.message}" style="display:block;color:blue;"/>
+             <h:panelGrid columns="2">
                 <h:outputText id = "o1" value="Email"></h:outputText>
                 <h:inputText id = "i1" value="#{registerBean.email}"></h:inputText>
                 <h:outputText  id = "o2" value="Password"></h:outputText>
@@ -19,9 +21,19 @@
                 
             </h:panelGrid>
             
-            <h:commandButton value="Register" action="response"></h:commandButton>            
+            <h:commandButton value="Register" action="#{registerBean.register()}">
+            <f:ajax render="message" execute="i1 i2 i3"/>
+            </h:commandButton>            
             <h:commandButton value="Go to Login" action="login"></h:commandButton>              			
         </h:form>
+    </ui:define>
+    <ui:define name="mainBody">
+    	<h:form>
+    		<h:outputText id="o4" value="Welcome to our Buckeye Bike Rental website!
+    		We can provide you a convenient way to enjoy bike riding." style="display:block;margin-top:20px" >
+    			
+    		</h:outputText>
+    	</h:form>
     </ui:define>
 </ui:composition>
 </html>

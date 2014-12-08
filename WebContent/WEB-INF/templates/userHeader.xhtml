@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="ISO-8859-1" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<h:head>
+			<style type="text/css">
+			body {
+				font-family:arial;
+				font-size:.8em;
+				color:black;
+				background-color:white;
+				margin: 0;
+				padding: 0;
+			}
+		
+			#HeaderTitle{
+			display: block;
+			font-size: 2em;
+			margin-top: 0.67em;
+			margin-bottom: 0.67em;
+			margin-left: 0;
+			margin-right: 0;
+			font-weight: bold;
+			text-align:center;}
+
+
+			#mainmenu {
+				margin:0;
+				padding:0;
+			}
+
+			#mainmenu ul {
+				background-color:#336699;
+				text-align: center;
+				margin: 0;
+				padding: .3em 1em;
+			}
+			
+			#mainmenu li {
+				list-style-type: none;
+				display: inline;
+			}
+
+			#mainmenu li a {
+				font-size: 1em;
+				color: white;
+				background-color: transparent;
+				text-decoration: none;
+				padding: .3em 1em;
+			}
+			
+			#mainmenu a:hover {
+				color:black;
+				background-color:yellow;
+			}
+		</style>
+	</h:head>
+	<h:body>
+		<div id="HeaderTitle">Buckeye Bike Rental </div>
+		<div id="mainmenu">
+			<ul>
+				<li><a href="http://localhost:8080/BikeRental/faces/login.xhtml">Member</a></li>
+				<li><a href="http://localhost:8080/BikeRental/faces/userSearchBikes.xhtml">View Bikes</a></li>
+				<li><a href="http://localhost:8080/BikeRental/faces/userSearchEvent.xhtml">Explore Activities</a></li>
+				<li><a href="http://localhost:8080/BikeRental/faces/aboutAuthor.xhtml">Contact Us</a></li>
+			</ul>
+		</div>
+	</h:body>
+</html>

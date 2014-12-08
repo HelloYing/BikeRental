@@ -20,7 +20,6 @@ import examples.cse769.EJB.Entity.*;
  */
 public class UsermainBean
 {
-	
 	@EJB
 	private BikeService bikeService=new BikeService();
 	@EJB
@@ -33,28 +32,15 @@ public class UsermainBean
 	public void setPrice(double price){
 		this.price=price;
 	}
-	private String begDate;
-	public String getBegDate(){
-		return begDate;
-	}
-	public void setBegDate(String begDate){
-		this.begDate=begDate;
-	}
-	private String endDate;
-	public String getEndDate(){
-		return endDate;
-	}
-	public void setEndDate(String endDate){
-		this.endDate=endDate;
-	}
-    private ArrayList<ArrayList<String>> bikelist=new ArrayList<ArrayList<String>>();
-	
-	public ArrayList<ArrayList<String>> getBikelist(){
-		return bikelist;
-	}
-	public void setBikelist(ArrayList<ArrayList<String>> bikelist){
-		this.bikelist=bikelist;
-	}
+
+	  private ArrayList<ArrayList<String>> bikelist=new ArrayList<ArrayList<String>>();
+		
+		public ArrayList<ArrayList<String>> getBikelist(){
+			return bikelist;
+		}
+		public void setBikelist(ArrayList<ArrayList<String>> bikelist){
+			this.bikelist=bikelist;
+		}
 	
 	public String viewBikes(){		
 		bikelist=bikeService.searchAllBike();
@@ -70,7 +56,7 @@ public class UsermainBean
 		this.logBean = logBean;
 	}
 	
-	@EJB
+	/*@EJB
 	private ProfileService profileService;
 	
 	private ProfileBean profileBean;
@@ -80,18 +66,25 @@ public class UsermainBean
 	public void setProfileBean(ProfileBean profileBean){
 		this.profileBean=profileBean;
 	}
+	
+	/*
 	public String profile(){
+		
 		System.out.println("logBean id="+logBean.getId());
-		Profile profile=profileService.search(logBean.getId());
+		
+		Profile profile=profileService.search("1345075374@qq.com");
 		
 		profileBean.setFirstname(profile.getFirstname());
 		profileBean.setLastname(profile.getLastname());
 		profileBean.setPhone(profile.getPhone());
 		profileBean.setBirthday(profile.getBirthday());
 		profileBean.setAddress(profile.getAddress());
+		profileBean.setMessage("Update successfully! ");
 		return "profile";
 	}
+	*/
 	
+
 	public ArrayList<ArrayList<String>> availablebikelist=new ArrayList<ArrayList<String>>();
 	
 	public ArrayList<ArrayList<String>> getAvailablebikelist(){
@@ -100,33 +93,7 @@ public class UsermainBean
 	public void setAvailablebikelist(ArrayList<ArrayList<String>> availablebikelist){
 		this.availablebikelist=availablebikelist;
 	}
+
 	
-	public String findAvailableBikes() throws ParseException{
-		CheckInput checkInput=new CheckInput();
-		if(checkInput.checkDate(begDate) && checkInput.checkDate(endDate)){
-			SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
-			Date bin=new Date(sdf.parse(begDate).getTime());
-			Date end=new Date(sdf.parse(endDate).getTime());
-			ArrayList<BikeEntity> bikes=bikeService.searchAvailableBike(price);
-			for(BikeEntity bike: bikes){
-				if(rentService.searchAvailableBike(bike.getId(), bin, end)){
-					ArrayList<String> val=new ArrayList<String>();
-					val.add(bike.getName());
-					val.add(bike.getDescription());
-					val.add(""+bike.getCondition());
-					val.add(""+bike.getDailyprice());
-					val.add(""+bike.getLatefee());
-					val.add(""+bike.getDamagefee());
-					availablebikelist.add(val);
-				}
-			}
-			if(availablebikelist.size()==0){
-				return "noavailable";
-			}
-			return "available";
-		}else{
-			return "noavailable";
-		}
-		
-	}
+	
 }

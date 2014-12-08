@@ -14,90 +14,49 @@
   </PROCESS-ITEM>
   <PROCESS-ITEM ID="rules:#login.xhtml:2" NAME="item2"
    PATH="/login.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="0::#loginfail.xhtml" NAME="output"
-    PATH="/loginfail.xhtml" TARGET="rules:#loginfail.xhtml" TITLE="0" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
-  <PROCESS-ITEM ID="rules:#login.xhtml:3" NAME="item3"
-   PATH="/login.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="register::#register.xhtml" NAME="output"
     PATH="/register.xhtml" TARGET="rules:#register.xhtml"
     TITLE="register" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
- </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#loginfail.xhtml" PATH="/loginfail.xhtml"
-  SHAPE="256,465,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#loginfail.xhtml:0" NAME="item"
-   PATH="/loginfail.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="back::#login.xhtml" NAME="output"
-    PATH="/login.xhtml" TARGET="rules:#login.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#usermain.xhtml" PATH="/usermain.xhtml"
   SHAPE="240,33,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#usermain.xhtml:0" NAME="item"
    PATH="/usermain.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="logout::#login.xhtml" NAME="output"
-    PATH="/login.xhtml" TARGET="rules:#login.xhtml" TITLE="logout" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
-  <PROCESS-ITEM ID="rules:#usermain.xhtml:1" NAME="item1"
-   PATH="/usermain.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="allbikes::#bikelist.xhtml" NAME="output"
-    PATH="/bikelist.xhtml" TARGET="rules:#bikelist.xhtml"
-    TITLE="allbikes" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
-  <PROCESS-ITEM ID="rules:#usermain.xhtml:2" NAME="item2"
-   PATH="/usermain.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="available::#availablebikes.xhtml"
-    NAME="output" PATH="/availablebikes.xhtml"
-    TARGET="rules:#availablebikes.xhtml" TITLE="available" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
-  <PROCESS-ITEM ID="rules:#usermain.xhtml:3" NAME="item3"
-   PATH="/usermain.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="noavailable::#nobikes.xhtml" NAME="output"
-    PATH="/nobikes.xhtml" TARGET="rules:#nobikes.xhtml"
-    TITLE="noavailable" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
-  <PROCESS-ITEM ID="rules:#usermain.xhtml:4" NAME="item4"
-   PATH="/usermain.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="profile::#profile.xhtml" NAME="output"
     PATH="/profile.xhtml" TARGET="rules:#profile.xhtml" TITLE="profile" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
-  <PROCESS-ITEM ID="rules:#usermain.xhtml:5" NAME="item5"
-   PATH="/usermain.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="false::#noresults.xhtml" NAME="output"
-    PATH="/noresults.xhtml" TARGET="rules:#noresults.xhtml"
-    TITLE="false" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="orders::#orderHistory.xhtml" NAME="output1"
+    PATH="/orderHistory.xhtml" TARGET="rules:#orderHistory.xhtml"
+    TITLE="orders" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="rentBike::#availablebikes.xhtml"
+    NAME="output2" PATH="/availablebikes.xhtml"
+    TARGET="rules:#availablebikes.xhtml" TITLE="rentBike" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="logout::#login.xhtml" NAME="output3"
+    PATH="/login.xhtml" TARGET="rules:#login.xhtml" TITLE="logout" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#staffMain.xhtml" PATH="/staffMain.xhtml"
   SHAPE="608,433,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#staffMain.xhtml:0" NAME="item"
    PATH="/staffMain.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="updateBike::#updateBike.xhtml" NAME="output"
-    PATH="/updateBike.xhtml" TARGET="rules:#updateBike.xhtml"
-    TITLE="updateBike" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT ID="updateEvent::#updateEvent.xhtml"
-    NAME="output1" PATH="/updateEvent.xhtml"
-    TARGET="rules:#updateEvent.xhtml" TITLE="updateEvent" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT ID="deleteBike::#deleteBike.xhtml"
-    NAME="output2" PATH="/deleteBike.xhtml"
-    TARGET="rules:#deleteBike.xhtml" TITLE="deleteBike" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT ID="searchBike::#staffsearchBikes.xhtml"
-    NAME="output3" PATH="/staffsearchBikes.xhtml"
-    TARGET="rules:#staffsearchBikes.xhtml" TITLE="searchBike" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT ID="postEvent::#postEvent.xhtml" NAME="output4"
+   <PROCESS-ITEM-OUTPUT ID="editBike::#staffBike.xhtml" NAME="output"
+    PATH="/staffBike.xhtml" TARGET="rules:#staffBike.xhtml"
+    TITLE="editBike" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="addBike::#addBike.xhtml" NAME="output2"
+    PATH="/addBike.xhtml" TARGET="rules:#addBike.xhtml" TITLE="addBike" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="postEvent::#postEvent.xhtml" NAME="output5"
     PATH="/postEvent.xhtml" TARGET="rules:#postEvent.xhtml"
     TITLE="postEvent" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT ID="updateRent::#updateRent.xhtml"
-    NAME="output5" PATH="/updateRent.xhtml"
-    TARGET="rules:#updateRent.xhtml" TITLE="updateRent" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT ID="searchRent::#searchRent.xhtml"
-    NAME="output6" PATH="/searchRent.xhtml"
-    TARGET="rules:#searchRent.xhtml" TITLE="searchRent" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="editEvent::#updateEvent.xhtml"
+    NAME="output3" PATH="/updateEvent.xhtml"
+    TARGET="rules:#updateEvent.xhtml" TITLE="editEvent" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="updateRent::#staffUpdateRent.xhtml"
+    NAME="output4" PATH="/staffUpdateRent.xhtml"
+    TARGET="rules:#staffUpdateRent.xhtml" TITLE="updateRent" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="logout::#login.xhtml" NAME="output1"
+    PATH="/login.xhtml" TARGET="rules:#login.xhtml" TITLE="logout" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#noresults.xhtml" PATH="/noresults.xhtml"
-  SHAPE="464,161,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#register.xhtml" PATH="/register.xhtml"
   SHAPE="48,192,50,25" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#register.xhtml:0" NAME="item"
@@ -105,55 +64,13 @@
    <PROCESS-ITEM-OUTPUT ID="login::#login.xhtml" NAME="output1"
     PATH="/login.xhtml" TARGET="rules:#login.xhtml" TITLE="login" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
-  <PROCESS-ITEM ID="rules:#register.xhtml:1" NAME="item1"
-   PATH="/register.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="response::#registerres.xhtml" NAME="output"
-    PATH="/registerres.xhtml" TARGET="rules:#registerres.xhtml"
-    TITLE="response" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
- </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#registerres.xhtml" PATH="/registerres.xhtml"
-  SHAPE="256,321,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#registerres.xhtml:0" NAME="item"
-   PATH="/registerres.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="login::#login.xhtml" NAME="output"
-    PATH="/login.xhtml" TARGET="rules:#login.xhtml" TITLE="login" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
-  <PROCESS-ITEM ID="rules:#registerres.xhtml:1" NAME="item1"
-   PATH="/registerres.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="back::#registerres.xhtml" NAME="output"
-    PATH="/registerres.xhtml" TARGET="rules:#registerres.xhtml"
-    TITLE="back" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
  </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#registered.xhtml" PATH="/registered.xhtml"
-  SHAPE="208,160,0,0" model-entity="JSFProcessGroup" persistent="true"/>
+  SHAPE="504,152,50,25" model-entity="JSFProcessGroup" persistent="true"/>
  <PROCESS-ITEM NAME="rules:#profile.xhtml" PATH="/profile.xhtml"
-  SHAPE="48,337,0,0" model-entity="JSFProcessGroup">
+  SHAPE="408,216,50,41" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#profile.xhtml:0" NAME="item"
    PATH="/profile.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="back::#usermain.xhtml" NAME="output"
-    PATH="/usermain.xhtml" TARGET="rules:#usermain.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
-  <PROCESS-ITEM ID="rules:#profile.xhtml:1" NAME="item1"
-   PATH="/profile.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="profileresult::#profileresult.xhtml"
-    NAME="output" PATH="/profileresult.xhtml"
-    TARGET="rules:#profileresult.xhtml" TITLE="profileresult" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
- </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#bikelist.xhtml" PATH="/bikelist.xhtml"
-  SHAPE="640,433,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#bikelist.xhtml:0" NAME="item"
-   PATH="/bikelist.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="back::#usermain.xhtml" NAME="output"
-    PATH="/usermain.xhtml" TARGET="rules:#usermain.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
- </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#profileresult.xhtml"
-  PATH="/profileresult.xhtml" SHAPE="368,721,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#profileresult.xhtml:0" NAME="item"
-   PATH="/profileresult.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="back::#usermain.xhtml" NAME="output"
     PATH="/usermain.xhtml" TARGET="rules:#usermain.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
@@ -166,82 +83,10 @@
     PATH="/usermain.xhtml" TARGET="rules:#usermain.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#nobikes.xhtml" PATH="/nobikes.xhtml"
-  SHAPE="80,721,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#nobikes.xhtml:0" NAME="item"
-   PATH="/nobikes.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="back::#usermain.xhtml" NAME="output"
-    PATH="/usermain.xhtml" TARGET="rules:#usermain.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
- </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#staffsearchBikes.xhtml"
-  PATH="/staffsearchBikes.xhtml" SHAPE="352,593,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#staffsearchBikes.xhtml:0" NAME="item"
-   PATH="/staffsearchBikes.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="found::#searchBikeResult.xhtml"
-    NAME="output" PATH="/searchBikeResult.xhtml"
-    TARGET="rules:#searchBikeResult.xhtml" TITLE="found" model-entity="JSFProcessItemOutput"/>
-   <PROCESS-ITEM-OUTPUT ID="back::#staffMain.xhtml" NAME="output1"
-    PATH="/staffMain.xhtml" TARGET="rules:#staffMain.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
-  <PROCESS-ITEM ID="rules:#staffsearchBikes.xhtml:1" NAME="item1"
-   PATH="/staffsearchBikes.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="not found::#noResultFound.xhtml"
-    NAME="output" PATH="/noResultFound.xhtml"
-    TARGET="rules:#noResultFound.xhtml" TITLE="not found" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
- </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#noResultFound.xhtml"
-  PATH="/noResultFound.xhtml" SHAPE="80,881,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#noResultFound.xhtml:0" NAME="item"
-   PATH="/noResultFound.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="back::#staffsearchBikes.xhtml" NAME="output"
-    PATH="/staffsearchBikes.xhtml"
-    TARGET="rules:#staffsearchBikes.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
- </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#searchBikeResult.xhtml"
-  PATH="/searchBikeResult.xhtml" SHAPE="80,433,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#searchBikeResult.xhtml:0" NAME="item"
-   PATH="/searchBikeResult.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="back::#staffsearchBikes.xhtml" NAME="output"
-    PATH="/staffsearchBikes.xhtml"
-    TARGET="rules:#staffsearchBikes.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
- </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#updateBike.xhtml" PATH="/updateBike.xhtml"
-  SHAPE="352,1009,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#updateBike.xhtml:0" NAME="item"
-   PATH="/updateBike.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="back::#staffMain.xhtml" NAME="output"
-    PATH="/staffMain.xhtml" TARGET="rules:#staffMain.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
-  <PROCESS-ITEM ID="rules:#updateBike.xhtml:1" NAME="item1"
-   PATH="/updateBike.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="back::#staffMain.xhtml" NAME="output"
-    PATH="/staffMain.xhtml" TARGET="rules:#staffMain.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
- </PROCESS-ITEM>
  <PROCESS-ITEM NAME="rules:#addBike.xhtml" PATH="/addBike.xhtml"
   SHAPE="352,1265,0,0" model-entity="JSFProcessGroup">
   <PROCESS-ITEM ID="rules:#addBike.xhtml:0" NAME="item"
    PATH="/addBike.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="back::#staffMain.xhtml" NAME="output"
-    PATH="/staffMain.xhtml" TARGET="rules:#staffMain.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
- </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#deleteBike.xhtml" PATH="/deleteBike.xhtml"
-  SHAPE="352,1377,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#deleteBike.xhtml:0" NAME="item"
-   PATH="/deleteBike.xhtml" model-entity="JSFProcessItem">
-   <PROCESS-ITEM-OUTPUT ID="back::#staffMain.xhtml" NAME="output"
-    PATH="/staffMain.xhtml" TARGET="rules:#staffMain.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
-  </PROCESS-ITEM>
- </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#searchRent.xhtml" PATH="/searchRent.xhtml"
-  SHAPE="352,1489,0,0" model-entity="JSFProcessGroup">
-  <PROCESS-ITEM ID="rules:#searchRent.xhtml:0" NAME="item"
-   PATH="/searchRent.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="back::#staffMain.xhtml" NAME="output"
     PATH="/staffMain.xhtml" TARGET="rules:#staffMain.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
@@ -254,8 +99,36 @@
     PATH="/staffMain.xhtml" TARGET="rules:#staffMain.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
- <PROCESS-ITEM NAME="rules:#updateRent.xhtml" PATH="/updateRent.xhtml"
-  SHAPE="896,897,0,0" model-entity="JSFProcessGroup"/>
  <PROCESS-ITEM NAME="rules:#updateEvent.xhtml" PATH="/updateEvent.xhtml"
-  SHAPE="896,897,0,0" model-entity="JSFProcessGroup"/>
+  SHAPE="896,897,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#updateEvent.xhtml:0" NAME="item"
+   PATH="/updateEvent.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#staffMain.xhtml" NAME="output"
+    PATH="/staffMain.xhtml" TARGET="rules:#staffMain.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#orderHistory.xhtml"
+  PATH="/orderHistory.xhtml" SHAPE="624,17,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#orderHistory.xhtml:0" NAME="item"
+   PATH="/orderHistory.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#usermain.xhtml" NAME="output"
+    PATH="/usermain.xhtml" TARGET="rules:#usermain.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#staffBike.xhtml" PATH="/staffBike.xhtml"
+  SHAPE="336,529,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#staffBike.xhtml:0" NAME="item"
+   PATH="/staffBike.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#staffMain.xhtml" NAME="output"
+    PATH="/staffMain.xhtml" TARGET="rules:#staffMain.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#staffUpdateRent.xhtml"
+  PATH="/staffUpdateRent.xhtml" SHAPE="864,465,0,0" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#staffUpdateRent.xhtml:0" NAME="item"
+   PATH="/staffUpdateRent.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="back::#staffMain.xhtml" NAME="output"
+    PATH="/staffMain.xhtml" TARGET="rules:#staffMain.xhtml" TITLE="back" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
 </PROCESS>

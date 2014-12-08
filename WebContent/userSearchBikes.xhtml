@@ -8,17 +8,16 @@
 
 <ui:composition template="/WEB-INF/templates/template.xhtml">
     <ui:define name="mainBody">
-        <h:form>
-        	
-        	 <h:outputText id="message" value="#{availablebikeBean.res}" />
-        	 
-        	 <h:dataTable id="table1" value="#{availablebikeBean.rentablebikes}" var="bike" border="1">
+        <h:form>           	
+              <h:outputText value="#{BikeBean.message}" id="message" style="display:block;font-weight:bold;margin-top:20px"/>         
+              
+            <h:dataTable id="table1" value="#{BikeBean.bikes}" var="bike" border="1">
     			<f:facet name="header">
         			<h:outputText value="Bikes" />
     			</f:facet>
     			<h:column>
         			<f:facet name="header">
-            			<h:outputText  value="bikeId" />
+            			<h:outputText value="bikeId" />
         			</f:facet>
         			<h:outputText id="id1" value="#{bike.id}" />
     			</h:column>
@@ -64,52 +63,44 @@
         			</f:facet>
         				<h:outputText id="id7" value="#{bike.latefee}" />
     			</h:column>
-    			
-    			<h:column>
-        			<f:facet name="header">
-            			<h:outputText value="Rent" />
-        			</f:facet>
-        			<h:commandButton value="Rent" action="#{availablebikeBean.rent(loginBean.email,bike)}">
-        			<f:ajax render="@all" execute="id1 id2 id3 id4 id5 id6 id7"/>
-        			</h:commandButton>	
-    			</h:column>
-    			
 		</h:dataTable>         
-        
-            <h:commandButton value="Back" action="back"></h:commandButton>            
-                        
-            
-        </h:form>
+       </h:form>
     </ui:define>
-    
-     <ui:define name="sideBar">
-    
-      <h:form>
-          <h:panelGrid columns="2">
-              <h:outputText value="Welcome user #{loginBean.email} " style="display:block; color:blue;margin-top:20px;margin-bottom:50px
-    		;margin-left:10px;"></h:outputText>
-              <h:outputText value="You have #{loginBean.point} points "></h:outputText>         
-              <h:outputText value="Find Available Bikes"></h:outputText>
-          </h:panelGrid>
-          <h:panelGrid columns="2">
+   
+    <ui:define name="sideBar">
+    	<h:form>
+    	 <h:panelGrid columns="2">
+               	
+               	<h:outputText value="type"></h:outputText>
+                 <h:selectOneMenu id="type"
+                     value="#{BikeBean.type}">
+        		<f:selectItem id="item1" itemLabel="mountain" itemValue="mountain" />
+        		<f:selectItem id="item2" itemLabel="road" itemValue="road" />
+        		<f:selectItem id="item3" itemLabel="cyclocross" itemValue="cyclocross" />
+        		<f:selectItem id="item4" itemLabel="hybrid" itemValue="hybrid" />
+        		<f:selectItem id="item5" itemLabel="comfort" itemValue="comfort" />
+       			</h:selectOneMenu>
+       			
                 
                 <h:outputText value="greater than price:"></h:outputText>
-                <h:inputText id="lowprice" value="#{availablebikeBean.lowprice}"></h:inputText>
+                <h:inputText id="lowprice" value="#{BikeBean.lowprice}"></h:inputText>
                 
                 <h:outputText value="less than price: "></h:outputText>
-                <h:inputText id="highprice" value="#{availablebikeBean.highprice}"></h:inputText>
-                
-                <h:outputText  id = "o2" value="Begin Date (Format is YYYY-MM-DD)"></h:outputText>
-                <h:inputText  id = "begin" value="#{availablebikeBean.begDate}"></h:inputText>
-				<h:outputText  id = "o3" value="End Date (Format is YYYY-MM-DD)"></h:outputText>
-                <h:inputText  id = "end" value="#{availablebikeBean.endDate}"></h:inputText>                
-           </h:panelGrid>
-          <h:commandButton value="Search" action="#{availablebikeBean.findAvailableBikes()}">
-          <f:ajax render="@all" execute="lowprice highprice begin end"/>
-          </h:commandButton>                           
-        </h:form>
-                
+                <h:inputText id="highprice" value="#{BikeBean.highprice}"></h:inputText>
+
+            </h:panelGrid>
+            
+            <h:commandButton value="Show All Bikes" action="#{BikeBean.searchAllBikes}">
+            <f:ajax render="@all" execute=""/>
+            </h:commandButton>
+            <h:commandButton value="Search by price" action="#{BikeBean.searchByPrice()}">
+             <f:ajax render="@all" execute="lowprice highprice"/>
+            </h:commandButton>
+            <h:commandButton value="Search by type" action="#{BikeBean.searchByType()}">
+             <f:ajax render="@all" execute="type"/>
+            </h:commandButton>
+           
+    	</h:form>
     </ui:define>
-    
 </ui:composition>
 </html>

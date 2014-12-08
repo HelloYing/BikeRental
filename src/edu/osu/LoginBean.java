@@ -22,6 +22,9 @@ public class LoginBean
     private String password;
     private int point;
 
+    //login message
+    private String message;
+    
 	public String login() {
 
  	   String[] params = new String[3];
@@ -43,9 +46,12 @@ public class LoginBean
 		int[] res = peopleService.search(email, password);
 	    logger.exiting("LoginBean", "userName", res);
 
+	    if(res[0]==0)
+	    {
+	    	this.setMessage("User not found.Please check you email or password.");
+	    }
 		if (res[0]!=0)
 		{
-				
 			id=res[1];
 		}
 		if(res[0]==1){
@@ -83,6 +89,14 @@ public class LoginBean
 	}
 	public void setPoint(int point){
 		this.point=point;
+	}
+
+	public String getMessage() {
+		return message;
+	}
+
+	public void setMessage(String message) {
+		this.message = message;
 	}
 	
 }

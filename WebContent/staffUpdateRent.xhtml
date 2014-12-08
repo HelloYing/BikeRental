@@ -1,0 +1,93 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="mainBody">
+        <h:form>           	
+               
+            <h:dataTable id="table1" value="#{RentBean.rents}" var="rent" border="1">
+    			<f:facet name="header">
+        			<h:outputText value="Rents" />
+    			</f:facet>
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText value="rentId" />
+        			</f:facet>
+        			<h:outputText id="id1" value="#{rent.id}" />
+    			</h:column>
+    			
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText value="begin date" />
+        			</f:facet>
+        				<h:outputText id="id2" value="#{rent.datebegin}" />
+    			</h:column>
+    
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText value="end date" />
+        			</f:facet>
+        				<h:outputText id="id3" value="#{rent.dateend}" />
+    			</h:column>
+    			
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText value="price" />
+        			</f:facet>
+        				<h:outputText id="id4" value="#{rent.price}" />
+    			</h:column>
+    			
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText value="damage fee" />
+        			</f:facet>
+        				<h:outputText id="id5" value="#{rent.damagefee}" />
+    			</h:column>
+    			
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText value="late fee" />
+        			</f:facet>
+        				<h:outputText id="id6" value="#{rent.latefee}" />
+    			</h:column>
+    			
+		</h:dataTable>         
+       </h:form>
+    </ui:define>
+   
+     <ui:define name="sideBar">
+        <h:form>
+        <h:outputText value="#{RentBean.updateMessage}" style="display:block; color:blue;"></h:outputText>
+            <h:panelGrid columns="2">
+            
+               	<h:outputText value="id"></h:outputText>
+                <h:inputText id="id" value="#{RentBean.id}"></h:inputText>
+                
+               
+                <h:outputText value="damage fee"></h:outputText>
+                <h:inputText id="damagefee" value="#{RentBean.damagefee}"></h:inputText>
+                
+                 <h:outputText value="late fee"></h:outputText>
+                <h:inputText id="latefee" value="#{RentBean.latefee}"></h:inputText>
+			 </h:panelGrid>
+            
+             <h:commandButton value="Search Rent By Id" action="#{RentBean.searchRentById()}">
+             <f:ajax render="@all" execute="id"/>
+             </h:commandButton>
+             
+             <h:commandButton value="Update Rent" action="#{RentBean.updateRent()}">
+             <f:ajax render="@all" execute="id latefee damagefee"/>
+             </h:commandButton>
+            <h:commandButton value="Back" action="back"></h:commandButton>            
+                   
+            
+        </h:form>
+    </ui:define>
+    	
+</ui:composition>
+</html>

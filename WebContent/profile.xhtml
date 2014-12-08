@@ -6,31 +6,39 @@
     xmlns:h="http://java.sun.com/jsf/html"
     xmlns:f="http://java.sun.com/jsf/core">
 
-<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
-    <ui:define name="content">
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="mainBody">
         <h:form>
         <h:outputText value="User Profile"></h:outputText>
         
-            <h:panelGrid columns="2">
-                <h:outputText value="Email"></h:outputText>
-                <h:outputText value="#{logBean.email}"></h:outputText>
-               	<h:outputText value="Firstname"></h:outputText>
-                <h:inputText value="#{profileBean.firstname}"></h:inputText>
+            <h:panelGrid columns="2" >
+    
+                 <h:outputText value="Firstname"></h:outputText>
+                <h:inputText value="#{profileBean.firstname}" id="id2"></h:inputText>
                 <h:outputText value="Lastname"></h:outputText>
-                <h:inputText value="#{profileBean.lastname}"></h:inputText>
+                <h:inputText value="#{profileBean.lastname}" id="id3"></h:inputText>
                 <h:outputText value="Phone"></h:outputText>
-                <h:inputText value="#{profileBean.phone}"></h:inputText>
+                <h:inputText value="#{profileBean.phone}" id="id4"></h:inputText>
                 <h:outputText value="Birthday (Format is YYYY-MM-DD)"></h:outputText>
-                <h:inputText value="#{profileBean.birthday}"></h:inputText>
+                <h:inputText value="#{profileBean.birthday}" id="id5"></h:inputText>
                 <h:outputText value="Address"></h:outputText>
-                <h:inputText value="#{profileBean.address}"></h:inputText>
-                <h:outputText value="Point"></h:outputText>
-                <h:outputText value="#{logBean.point}"></h:outputText>
-            </h:panelGrid>
-            <h:commandButton value="Back" action="back"></h:commandButton>
-            <h:commandButton value="Update" action="profileresult"></h:commandButton>
+                <h:inputText value="#{profileBean.address}" id="id6"></h:inputText>
+               
+        </h:panelGrid>
+            <h:commandButton value="Update" action="#{profileBean.update(loginBean.email)}" >
+            <f:ajax render="message" execute="id2 id3 id4 id5 id6"/>
+            </h:commandButton>
             
+            <h:outputText value="#{profileBean.message}" id="message" style="display:block;font-weight:bold;margin-top:20px"
+            />
         </h:form>
+    </ui:define>
+    
+    <ui:define name="sideBar">
+              <h:outputText value="Welcome user #{loginBean.email} " style="display:block; color:blue;margin-top:20px;margin-bottom:50px
+    		;margin-left:10px;"></h:outputText>
+              
+             	<h:commandButton action="back" value="Back Home" />
     </ui:define>
 </ui:composition>
 </html>

@@ -1,0 +1,54 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+          "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+<title><ui:insert name="title">Buckeye Bike Rental</ui:insert></title>
+<style type="text/css">
+body {font:12px Tahoma;margin:0px;text-align:center;background:#FFF;}
+
+#header {margin:0 auto;height:150px;background:#FFCC99;text-align:center;}
+
+#content {width:100%;margin:0 auto;height:500px;overflow:auto }
+
+#footer {width:100%;margin:0 auto;height:50px;background:#FFF}
+
+#sideBar {width:30%;height:500px; text-align:left;float:left;clear:left;overflow:hidden;background:#EFEFEF}
+
+#mainBody{width:70%; height:500px;background:#CCEEFF url("bg.gif") ;text-align:center;float:right;clear:right;overflow:hidden;
+font-size:1.5em;scrollable:true;scrollHeight:500px;overflow:auto;
+}
+
+</style>
+  
+</h:head>
+
+<h:body>
+
+<div id="header">
+    <ui:insert name="header">
+        <ui:include src="/WEB-INF/templates/userHeader.xhtml"/>
+    </ui:insert>
+</div>
+
+<div id="content">
+	<div id="sideBar">
+		<ui:insert name="sideBar">
+    	</ui:insert>
+	</div>
+	<div id="mainBody">
+		<ui:insert name="mainBody">
+		</ui:insert>
+	</div>
+</div>
+
+<div id="footer">
+    <ui:insert name="footer">
+        <ui:include src="/WEB-INF/templates/footer.xhtml"/>
+    </ui:insert>
+</div>
+
+</h:body>
+</html>

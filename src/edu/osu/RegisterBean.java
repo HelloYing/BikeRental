@@ -2,7 +2,7 @@ package edu.osu;
 
 import javax.ejb.EJB;
 
-import examples.cse769.EJB.Service.PeopleService;
+import examples.cse769.EJB.Service.*;
 
 /**
  * @author Siwei Dng
@@ -12,7 +12,10 @@ public class RegisterBean
 {
 	@EJB
 	private PeopleService peopleService=new PeopleService();
-	
+	@EJB
+	private ProfileService profileService=new ProfileService();
+	//register message
+	private String message;
 	private String email;
 	private String password;
 	private String conpassword;
@@ -36,18 +39,31 @@ public class RegisterBean
 		this.conpassword=conpassword;
 	}
 	
+	public String getMessage() {
+		return message;
+	}
+	public void setMessage(String message) {
+		this.message = message;
+	}
+	
 	public String register(){
 		if(!password.equals(conpassword)){
+			this.setMessage("Passwords are different!");
 			return "Passwords are different!";
 		}
 		CheckInput checkInput=new CheckInput();
 		if(checkInput.checkEmail(email) && checkInput.checkPassword(password)){
+			this.setMessage("Register Successfully! Please Login.");
+			profileService.insert(0,email);
 			return peopleService.insert(email, password);
 		}else if(!checkInput.checkEmail(email) && !checkInput.checkPassword(password)){
+			this.setMessage("Please use a valid email and a valid password.");
 			return "Please use a valid email and a valid password.";
 		}else if(!checkInput.checkEmail(email)){
+			this.setMessage("Please use a valid email.");
 			return "Please use a valid email.";
 		}else{
+			this.setMessage("Please use a valid password.");
 			return "Please use a valid password.";
 		}
 	}

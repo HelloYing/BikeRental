@@ -7,22 +7,21 @@
   <managed-bean-class>edu.osu.BikeBean</managed-bean-class>
   <managed-bean-scope>application</managed-bean-scope>
  </managed-bean>
- 
- 
  <managed-bean>
   <managed-bean-name>loginBean</managed-bean-name>
   <managed-bean-class>edu.osu.LoginBean</managed-bean-class>
   <managed-bean-scope>application</managed-bean-scope>
  </managed-bean>
- 
- 
+ <managed-bean>
+  <managed-bean-name>WelcomeBean</managed-bean-name>
+  <managed-bean-class>edu.osu.WelcomeBean</managed-bean-class>
+  <managed-bean-scope>application</managed-bean-scope>
+ </managed-bean>
  <managed-bean>
   <managed-bean-name>registerBean</managed-bean-name>
   <managed-bean-class>edu.osu.RegisterBean</managed-bean-class>
   <managed-bean-scope>application</managed-bean-scope>
  </managed-bean>
- 
- 
  <managed-bean>
   <managed-bean-name>usermainBean</managed-bean-name>
   <managed-bean-class>edu.osu.UsermainBean</managed-bean-class>
@@ -33,8 +32,6 @@
    <value>#{loginBean}</value>
   </managed-property>
  </managed-bean>
- 
- 
  <managed-bean>
   <managed-bean-name>availablebikeBean</managed-bean-name>
   <managed-bean-class>edu.osu.AvailableBikeBean</managed-bean-class>
@@ -44,16 +41,12 @@
    <property-class>edu.osu.LoginBean</property-class>
    <value>#{loginBean}</value>
   </managed-property>
-  
-  
   <managed-property>
    <property-name>usermainBean</property-name>
    <property-class>edu.osu.UsermainBean</property-class>
    <value>#{usermainBean}</value>
   </managed-property>
  </managed-bean>
- 
- 
  <managed-bean>
   <managed-bean-name>profileBean</managed-bean-name>
   <managed-bean-class>edu.osu.ProfileBean</managed-bean-class>
@@ -64,18 +57,17 @@
    <value>#{loginBean}</value>
   </managed-property>
  </managed-bean>
- 
-  <managed-bean>
+ <managed-bean>
   <managed-bean-name>EventBean</managed-bean-name>
   <managed-bean-class>edu.osu.EventBean</managed-bean-class>
   <managed-bean-scope>application</managed-bean-scope>
  </managed-bean>
- 
  <managed-bean>
   <managed-bean-name>RentBean</managed-bean-name>
   <managed-bean-class>edu.osu.RentBean</managed-bean-class>
   <managed-bean-scope>application</managed-bean-scope>
  </managed-bean>
+ 
  
  <navigation-rule>
   <display-name>login.xhtml</display-name>
@@ -93,119 +85,8 @@
    <to-view-id>/staffMain.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
- <navigation-rule>
-  <display-name>login.xhtml</display-name>
-  <from-view-id>/login.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>0</from-outcome>
-   <to-view-id>/loginfail.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>loginfail.xhtml</display-name>
-  <from-view-id>/loginfail.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/login.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>usermain.xhtml</display-name>
-  <from-view-id>/usermain.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>logout</from-outcome>
-   <to-view-id>/login.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>usermain.xhtml</display-name>
-  <from-view-id>/usermain.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>allbikes</from-outcome>
-   <to-view-id>/bikelist.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>bikelist.xhtml</display-name>
-  <from-view-id>/bikelist.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/usermain.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>usermain.xhtml</display-name>
-  <from-view-id>/usermain.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>available</from-outcome>
-   <to-view-id>/availablebikes.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>availablebikes.xhtml</display-name>
-  <from-view-id>/availablebikes.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/usermain.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>usermain.xhtml</display-name>
-  <from-view-id>/usermain.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>noavailable</from-outcome>
-   <to-view-id>/nobikes.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>nobikes.xhtml</display-name>
-  <from-view-id>/nobikes.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/usermain.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>usermain.xhtml</display-name>
-  <from-view-id>/usermain.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>profile</from-outcome>
-   <to-view-id>/profile.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>profile.xhtml</display-name>
-  <from-view-id>/profile.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/usermain.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>profile.xhtml</display-name>
-  <from-view-id>/profile.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>profileresult</from-outcome>
-   <to-view-id>/profileresult.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>profileresult.xhtml</display-name>
-  <from-view-id>/profileresult.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/usermain.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>usermain.xhtml</display-name>
-  <from-view-id>/usermain.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>false</from-outcome>
-   <to-view-id>/noresults.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
+ 
+  <navigation-rule>
   <display-name>login.xhtml</display-name>
   <from-view-id>/login.xhtml</from-view-id>
   <navigation-case>
@@ -221,115 +102,107 @@
    <to-view-id>/login.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
+ 
+ 
  <navigation-rule>
-  <display-name>register.xhtml</display-name>
-  <from-view-id>/register.xhtml</from-view-id>
+  <display-name>usermain.xhtml</display-name>
+  <from-view-id>/usermain.xhtml</from-view-id>
   <navigation-case>
-   <from-outcome>response</from-outcome>
-   <to-view-id>/registerres.xhtml</to-view-id>
+   <from-outcome>profile</from-outcome>
+   <to-view-id>/profile.xhtml</to-view-id>
   </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>registerres.xhtml</display-name>
-  <from-view-id>/registerres.xhtml</from-view-id>
   <navigation-case>
-   <from-outcome>login</from-outcome>
+   <from-outcome>orders</from-outcome>
+   <to-view-id>/orderHistory.xhtml</to-view-id>
+  </navigation-case>
+  <navigation-case>
+   <from-outcome>rentBike</from-outcome>
+   <to-view-id>/availablebikes.xhtml</to-view-id>
+  </navigation-case>
+  <navigation-case>
+   <from-outcome>logout</from-outcome>
    <to-view-id>/login.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
+ 
+ 
  <navigation-rule>
-  <display-name>registerres.xhtml</display-name>
-  <from-view-id>/registerres.xhtml</from-view-id>
+  <display-name>profile.xhtml</display-name>
+  <from-view-id>/profile.xhtml</from-view-id>
   <navigation-case>
    <from-outcome>back</from-outcome>
-   <to-view-id>/registerres.xhtml</to-view-id>
+   <to-view-id>/usermain.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+
+ <navigation-rule>
+  <display-name>orderHistory.xhtml</display-name>
+  <from-view-id>/orderHistory.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/usermain.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
  
  
+ <navigation-rule>
+  <display-name>availablebikes.xhtml</display-name>
+  <from-view-id>/availablebikes.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/usermain.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ 
+
  <navigation-rule>
   <display-name>staffMain.xhtml</display-name>
   <from-view-id>/staffMain.xhtml</from-view-id>
   <navigation-case>
-   <from-outcome>updateBike</from-outcome>
-   <to-view-id>/updateBike.xhtml</to-view-id>
-  </navigation-case>
-  <navigation-case>
-   <from-outcome>updateEvent</from-outcome>
-   <to-view-id>/updateEvent.xhtml</to-view-id>
+   <from-outcome>editBike</from-outcome>
+   <to-view-id>/staffBike.xhtml</to-view-id>
   </navigation-case>
   <navigation-case>
    <from-outcome>addBike</from-outcome>
    <to-view-id>/addBike.xhtml</to-view-id>
   </navigation-case>
   <navigation-case>
-   <from-outcome>deleteBike</from-outcome>
-   <to-view-id>/deleteBike.xhtml</to-view-id>
-  </navigation-case>
-  <navigation-case>
-   <from-outcome>searchBike</from-outcome>
-   <to-view-id>/staffsearchBikes.xhtml</to-view-id>
-  </navigation-case>
-  <navigation-case>
    <from-outcome>postEvent</from-outcome>
    <to-view-id>/postEvent.xhtml</to-view-id>
   </navigation-case>
   <navigation-case>
+   <from-outcome>editEvent</from-outcome>
+   <to-view-id>/updateEvent.xhtml</to-view-id>
+  </navigation-case>
+  <navigation-case>
    <from-outcome>updateRent</from-outcome>
-   <to-view-id>/updateRent.xhtml</to-view-id>
+   <to-view-id>/staffUpdateRent.xhtml</to-view-id>
   </navigation-case>
-  <navigation-case>
-   <from-outcome>searchRent</from-outcome>
-   <to-view-id>/searchRent.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>staffsearchBikes.xhtml</display-name>
-  <from-view-id>/staffsearchBikes.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>found</from-outcome>
-   <to-view-id>/searchBikeResult.xhtml</to-view-id>
-  </navigation-case>
-  <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/staffMain.xhtml</to-view-id>
+ <navigation-case>
+   <from-outcome>logout</from-outcome>
+   <to-view-id>/login.xhtml</to-view-id>
   </navigation-case>
  </navigation-rule>
- <navigation-rule>
-  <display-name>staffsearchBikes.xhtml</display-name>
-  <from-view-id>/staffsearchBikes.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>not found</from-outcome>
-   <to-view-id>/noResultFound.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>noResultFound.xhtml</display-name>
-  <from-view-id>/noResultFound.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/staffsearchBikes.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>searchBikeResult.xhtml</display-name>
-  <from-view-id>/searchBikeResult.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/staffsearchBikes.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
-  <display-name>updateBike.xhtml</display-name>
-  <from-view-id>/updateBike.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/staffMain.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
+ 
  <navigation-rule>
   <display-name>updateRent.xhtml</display-name>
-  <from-view-id>/updateBike.xhtml</from-view-id>
+  <from-view-id>/staffUpdateRent.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/staffMain.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <display-name>updateEvent.xhtml</display-name>
+  <from-view-id>/updateEvent.xhtml</from-view-id>
+  <navigation-case>
+   <from-outcome>back</from-outcome>
+   <to-view-id>/staffMain.xhtml</to-view-id>
+  </navigation-case>
+ </navigation-rule>
+ <navigation-rule>
+  <display-name>staffBike.xhtml</display-name>
+  <from-view-id>/staffBike.xhtml</from-view-id>
   <navigation-case>
    <from-outcome>back</from-outcome>
    <to-view-id>/staffMain.xhtml</to-view-id>
@@ -344,29 +217,11 @@
   </navigation-case>
  </navigation-rule>
  <navigation-rule>
-  <display-name>deleteBike.xhtml</display-name>
-  <from-view-id>/deleteBike.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/staffMain.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
-<navigation-rule>
-  <display-name>searchRent.xhtml</display-name>
-  <from-view-id>/searchRent.xhtml</from-view-id>
-  <navigation-case>
-   <from-outcome>back</from-outcome>
-   <to-view-id>/staffMain.xhtml</to-view-id>
-  </navigation-case>
- </navigation-rule>
- <navigation-rule>
   <display-name>postEvent.xhtml</display-name>
   <from-view-id>/postEvent.xhtml</from-view-id>
   <navigation-case>
    <from-outcome>back</from-outcome>
    <to-view-id>/staffMain.xhtml</to-view-id>
   </navigation-case>
-  </navigation-rule>
- 
- 
+ </navigation-rule>
 </faces-config>

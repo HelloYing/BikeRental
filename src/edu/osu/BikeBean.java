@@ -24,6 +24,8 @@ private double highprice;
 private int condition;
 private double damagefee;
 private double latefee;
+//whether this bike is editable or not
+private boolean editable=false;
 
 public int getId()
 {
@@ -74,107 +76,13 @@ public void setCondition(int c)
 public BikeEntity searchById()
 {
 	BikeEntity a=bikeService.serachBikeById(id);
+	ArrayList<BikeEntity> b=new ArrayList<BikeEntity>();
+	b.add(a);
+	this.setBikes(b);
 	return a;
 	
 }
 
-
-public String addBike()
-{
-	BikeEntity b=new BikeEntity();
-	b.setName(name);
-	b.setType(type);
-	b.setDescription(description);
-	b.setDailyprice(dailyprice);
-	b.setDamagefee(damagefee);
-	b.setLatefee(latefee);
-	b.setCondition(condition);
-	
-	if(bikeService.insertBike(b))
-	{
-		return "insert bike successfully!";
-	}
-	else
-		return "fails to insert bike,please try again.";
-	
-}
-
-public String deleteBike()
-{
-	
-	if(bikeService.deleteBike(id))
-	{
-		this.setMessage("delete bike sucessfully!");
-		return "delete bike sucessfully!";
-	}
-	else{
-		this.setMessage("fails to delete bike");
-		return "fails to delete bike";
-	}
-}
-
-public String updateBikePrice()
-{
-if(bikeService.updateBikePrice(id,dailyprice))
-{
-	this.setMessage("successful update");
-	return "update price sucessfully!";
-}
-else
-{
-	this.setMessage("fail update");
-	return "fail to update price,please try again.";
-}
-}
-
-public String updateBikeCondition()
-{
-	if(bikeService.updateBikeCondition(id,condition))
-	{
-		this.setMessage("successful update");
-		return "update bike condition successfully.";
-	}
-	else{
-		this.setMessage("fail update");
-		return "fail to update bike condition.";
-	}
-}
-
-public String searchByPrice()
-{
-	this.setBikes(bikeService.searchBikeByPrice(lowprice, highprice));
-	if(bikes.isEmpty())
-	{
-		this.setMessage("No results found!");
-		return "not found";
-		
-	}
-	else
-		return "found";
-}
-
-public String searchAllBikes()
-{
-	this.setBikes(bikeService.searchAllBikes());
-	if(bikes.isEmpty())
-	{
-		this.setMessage("No results found!");
-		return "not found";
-	}
-	else
-		return "found";
-}
-public String searchByCondition()
-{
-	this.setBikes(bikeService.searchBikeByCondition(condition));
-	if(bikes.isEmpty())
-	{
-		this.setMessage("No results found!");
-		return "not found";
-	}
-	else
-		return "found";
-}
 public double getDamagefee() {
 	return damagefee;
 }
@@ -217,4 +125,165 @@ public String getMessage() {
 public void setMessage(String m) {
 	this.message=m;
 }
+
+public String addBike()
+{
+	BikeEntity b=new BikeEntity();
+	b.setName(name);
+	b.setType(type);
+	b.setDescription(description);
+	b.setDailyprice(dailyprice);
+	b.setDamagefee(damagefee);
+	b.setLatefee(latefee);
+	b.setCondition(condition);
+	
+	if(bikeService.insertBike(b))
+	{
+		this.setMessage("Insert Bike successfully!");
+		return "successful insert";
+	}
+	else
+	{
+		this.setMessage("Fail to insert bike.");
+		return "fail insert";
+	}
+	
+}
+
+public String deleteBike()
+{
+	for(int i=0;i<bikes.size();i++)
+	{
+		BikeEntity a=bikes.get(i);
+		if(a.getId()==id)
+		{
+			bikes.remove(a);
+		}
+	}
+	if(bikeService.deleteBike(id))
+	{
+		this.setMessage("delete bike sucessfully!");
+		return "successful delete";
+	}
+	else{
+		this.setMessage("fails to delete bike");
+		return "fail delete";
+	}
+}
+
+public void edit(BikeEntity b)
+{
+	
+	b.setEditable(true);
+}
+
+public String updateBike(BikeEntity b)
+{
+	
+	b.setEditable(false);
+	if(bikeService.updateBike(b))
+	{
+		this.setMessage("Update Bike successfully!");
+		return "successful update";
+	}
+	else
+	{
+		this.setMessage("Fail to update Bike. Please try again.");
+		return "fail update";
+	}
+}
+public String updateBikePrice()
+{
+if(bikeService.updateBikePrice(id,dailyprice))
+{
+	this.setMessage("Update Bike Price successfully!");
+	return "successful update";
+}
+else
+{
+	this.setMessage("Fail to update Bike Price. Please try again.");
+	return "fail update";
+}
+}
+
+public String updateBikeCondition()
+{
+	if(bikeService.updateBikeCondition(id,condition))
+	{
+		this.setMessage("Update Bike Condition Successfully!");
+		return "successful update";
+	}
+	else{
+		this.setMessage("Fail to Update Bike Condition. Please try again.");
+		return "fail update";
+	}
+}
+
+
+
+public String searchAllBikes()
+{
+	this.setBikes(bikeService.searchAllBikes());
+	if(bikes.isEmpty())
+	{
+		this.setMessage("No results found!");
+		return "not found";
+	}
+	else{
+		this.setMessage("search results: ");
+		return "found";
+	}
+}
+
+public String searchByCondition()
+{
+	this.setBikes(bikeService.searchBikeByCondition(condition));
+	if(bikes.isEmpty())
+	{
+		this.setMessage("No results found!");
+		return "not found";
+	}
+	else{
+		this.setMessage("search results: ");
+		return "found";
+	}
+}
+
+public String searchByPrice()
+{
+	this.setBikes(bikeService.searchBikeByPrice(lowprice, highprice));
+	if(bikes.isEmpty())
+	{
+		this.setMessage("No results found!");
+		return "not found";
+		
+	}
+	else{
+		this.setMessage("search results: ");
+		return "found";
+	}
+}
+
+public String searchByType()
+{
+	this.setBikes(bikeService.searchBikeByType(type));
+	if(bikes.isEmpty())
+	{
+		this.setMessage("No results found!");
+		return "not found";
+	}
+	else
+	{
+		this.setMessage("search results: ");
+		return "found";
+	}
+}
+public boolean isEditable() {
+	return editable;
+}
+public void setEditable(boolean editable) {
+	this.editable = editable;
+}
+
+
 }

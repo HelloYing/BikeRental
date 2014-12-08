@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="sideBar">
+        <h:form>  
+            <h:panelGrid columns="2">
+               	
+               	<h:outputText value="id"></h:outputText>
+                <h:inputText id="id" value="#{BikeBean.id}"></h:inputText>
+                
+               	<h:outputText value="type"></h:outputText>
+                <h:selectOneMenu id="type"
+                     value="#{BikeBean.type}">
+        		<f:selectItem id="item1" itemLabel="mountain" itemValue="mountain" />
+        		<f:selectItem id="item2" itemLabel="road" itemValue="road" />
+        		<f:selectItem id="item3" itemLabel="cyclocross" itemValue="cyclocross" />
+        		<f:selectItem id="item4" itemLabel="hybrid" itemValue="hybrid" />
+        		<f:selectItem id="item5" itemLabel="comfort" itemValue="comfort" />
+       			</h:selectOneMenu>
+                
+                <h:outputText value="greater than price:"></h:outputText>
+                <h:inputText id="lowprice" value="#{BikeBean.lowprice}"></h:inputText>
+                
+                <h:outputText value="less than price: "></h:outputText>
+                <h:inputText id="highprice" value="#{BikeBean.highprice}"></h:inputText>
+                
+                <h:outputText value="condition"></h:outputText>
+               <h:selectOneMenu id="condition"
+                     value="#{BikeBean.condition}">
+        		<f:selectItem id="item11" itemLabel="Perfect" itemValue="1" />
+        		<f:selectItem id="item21" itemLabel="Good" itemValue="2" />
+        		<f:selectItem id="item31" itemLabel="Fine" itemValue="3" />
+        		<f:selectItem id="item41" itemLabel="Broken" itemValue="4" />
+       			</h:selectOneMenu>
+
+            </h:panelGrid>
+            
+            <h:commandButton value="Show All Bikes" action="#{BikeBean.searchAllBikes()}">
+            <f:ajax render="@all"></f:ajax>
+            </h:commandButton>
+             <h:commandButton value="Search by id" action="#{BikeBean.searchById()}">
+             <f:ajax render="@all" execute="id"></f:ajax>
+             </h:commandButton>
+            <h:commandButton value="Search by price" action="#{BikeBean.searchByPrice()}">
+            <f:ajax render="@all" execute="lowprice highprice"></f:ajax>
+            </h:commandButton>
+             <h:commandButton value="Search by Condition" action="#{BikeBean.searchByCondition()}">
+             <f:ajax render="@all" execute="condition"></f:ajax>
+             </h:commandButton>
+
+              <h:commandButton value="Back Home" action="back"></h:commandButton>     
+        </h:form>
+    </ui:define>
+    
+     <ui:define name="mainBody">
+        <h:form>
+        	 <h:outputText id="message" value="#{BikeBean.message}" />
+        	
+        	 <h:dataTable id="table1" value="#{BikeBean.bikes}" var="bike" border="1">
+    			<f:facet name="header">
+        			<h:outputText value="Bikes" />
+    			</f:facet>
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText  value="bikeId" />
+        			</f:facet>
+        			<h:outputText id="id1" value="#{bike.id}" />
+        			
+    			</h:column>
+    
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText value="type" />
+        			</f:facet>
+        				<h:outputText id="id3" value="#{bike.type}" rendered="#{not bike.editable}"/>
+        				<h:inputText id="id32" value="#{bike.type}" rendered="#{bike.editable}"/>
+    			</h:column>
+    			
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText value="description" />
+        			</f:facet>
+        				<h:outputText id="id4" value="#{bike.description}" rendered="#{not bike.editable}"/>
+        				<h:inputText id="id42" value="#{bike.description}" rendered="#{bike.editable}"/>
+    			</h:column>
+    			
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText value="dailyprice" />
+        			</f:facet>
+        				<h:outputText id="id5" value="#{bike.dailyprice}" rendered="#{not bike.editable}"/>
+        				<h:inputText id="id52" value="#{bike.dailyprice}" rendered="#{bike.editable}"/>
+    			</h:column>
+    			
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText value="damagefee" />
+        			</f:facet>
+        				<h:outputText id="id6" value="#{bike.damagefee}" rendered="#{not bike.editable}"/>
+        				<h:inputText id="id62" value="#{bike.damagefee}" rendered="#{bike.editable}"/>
+    			</h:column>
+    			
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText value="latefee" />
+        			</f:facet>
+        				<h:outputText id="id7" value="#{bike.latefee}" rendered="#{not bike.editable}"/>
+        				<h:inputText id="id72" value="#{bike.latefee}" rendered="#{bike.editable}"/>
+    			</h:column>
+    			
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText value="condition" />
+        			</f:facet>
+        				<h:outputText id="id8" value="#{bike.condition}" rendered="#{not bike.editable}"/>
+        				<h:inputText id="id82" value="#{bike.condition}" rendered="#{bike.editable}"/>
+    			</h:column>
+    			
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText value="Edit" />
+        			</f:facet>
+        			<h:commandButton value="Edit" action="#{BikeBean.edit(bike)}" rendered="#{not bike.editable}"/>
+        			<h:commandButton value="Save" action="#{BikeBean.updateBike(bike)}" rendered="#{bike.editable}">
+        			<f:ajax render="@all" execute="id1 id32 id42 id52 id62 id72 id82"></f:ajax>
+        			</h:commandButton>	
+    			</h:column>
+    			
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText value="Delete" />
+        			</f:facet>
+        			<h:commandButton value="Delete" action="#{BikeBean.deleteBike()}">
+        			<f:setPropertyActionListener 
+                     target="#{BikeBean.id}" value="#{bike.id}" />
+                     <f:ajax render="@all"/>
+        			</h:commandButton>	
+    			</h:column>
+    			
+		</h:dataTable>         
+            <h:commandButton value="Back" action="back"></h:commandButton>            
+                        
+            
+        </h:form>
+    </ui:define>
+</ui:composition>
+</html>

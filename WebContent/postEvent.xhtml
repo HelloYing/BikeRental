@@ -6,31 +6,56 @@
     xmlns:h="http://java.sun.com/jsf/html"
     xmlns:f="http://java.sun.com/jsf/core">
 
-<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
-    <ui:define name="content">
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="mainBody">
         <h:form>
-            <h:panelGrid columns="2">
+            <h:panelGrid columns="2"  border="2" cellpadding="0" cellspacing="1" bgcolor="#FFF"
+			 style="display:block; margin-left:20px;margin-top:20px;text-aligh:center;width:600px">
                
                	
-               	<h:outputText value="name"></h:outputText>
-                <h:inputText value="#{EventBean.name}"></h:inputText>
+               	<h:outputText value="name" style="display:block;"></h:outputText>
+                <h:inputText id="name" value="#{EventBean.name}" style="display:block;width:400px"></h:inputText>
                 
                 <h:outputText value="type"></h:outputText>
-                <h:inputText value="#{EventBean.type}"></h:inputText>
+                  <h:selectOneMenu id="type"
+                     value="#{EventBean.type}">
+        		<f:selectItem id="item1" itemLabel="sale" itemValue="sale" />
+        		<f:selectItem id="item2" itemLabel="contest" itemValue="contest" />
+        		<f:selectItem id="item3" itemLabel="party" itemValue="party" />
+        		<f:selectItem id="item4" itemLabel="news" itemValue="news" />
+       			</h:selectOneMenu>
                 
-                <h:outputText value="description"></h:outputText>
-                <h:inputText value="#{EventBean.description}"></h:inputText>
+                <h:outputText value="description" ></h:outputText>
+                <h:inputTextarea id="des" value="#{EventBean.description}" style="display:block;height:350px;width:400px"></h:inputTextarea>
                 
                 <h:outputText value="address"></h:outputText>
-                <h:inputText value="#{EventBean.address}"></h:inputText>
+                <h:inputText id="address" value="#{EventBean.address}" style="display:block;width:400px"></h:inputText>
+                
+                 <h:outputText value="date"></h:outputText>
+                <h:inputText id="date" value="#{EventBean.eventDate}" style="display:block;width:400px"></h:inputText>
               
             </h:panelGrid>
             
-            <h:commandButton value="Post Event" action="#{EventBean.postEvent()}"></h:commandButton>
-            <h:commandButton value="Back" action="back"></h:commandButton>            
+            <h:commandButton value="Post Event" action="#{EventBean.postEvent()}">
+            <f:ajax render="message" execute="name type des address date"/>
+            </h:commandButton>
+            
+            <h:outputText value="#{EventBean.addchmessage}" id="message" style="display:block;font-weight:bold;"/>             
                    
             
         </h:form>
+    </ui:define>
+    
+     <ui:define name="sideBar">
+    	<h:form>
+    		<h:outputText value="Welcome Staff: #{loginBean.email}" style="display:block; color:blue;margin-top:20px;margin-bottom:50px
+    		;margin-left:10px;" />
+    		<h:panelGrid columns="1" style="display:block;margin-left:40px">
+    		<h:commandButton action="updateEvent" value="update events" />
+    		<h:commandButton action="deleteEvent" value="delete events" />
+    		<h:commandButton action="back" value="back home" />
+    		</h:panelGrid>
+    	</h:form>
     </ui:define>
 </ui:composition>
 </html>

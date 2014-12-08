@@ -9,40 +9,20 @@
 <ui:composition template="/WEB-INF/templates/template.xhtml">
     <ui:define name="mainBody">
         <h:form>
-         <h:outputText value="#{EventBean.updatechmessage}" id="message" style="display:block;font-weight:bold;margin-top:20px"/>         
+         <h:outputText value="#{EventBean.searchmessage}" id="message" style="display:block;font-weight:bold;margin-top:20px"/>         
         <ui:repeat value="#{EventBean.events}" var="event">
 			 <h:panelGrid id="grid" columns="1" border="2" cellpadding="0" cellspacing="1" bgcolor="#FFF"
 			 style="display:block; margin-top:20px; margin-left:60px;margin-right:60px;text-align:center;width:400px">
-              	<h:outputText id="id1" value="#{event.name}" style="display:block;color:red;width:400px" rendered="#{not event.editable}"/>          			
-				<h:inputText id="id11" value="#{event.name}" style="display:block;color:red;width:400px" rendered="#{event.editable}"/>				
-              	
-              	<h:outputText id="id2" value="#{event.description}" rendered="#{not event.editable}"/>
-				<h:inputTextarea id="id21" value="#{event.description}"  rendered="#{event.editable}"/>
-              	
-              	
+              	<h:outputText id="id1" value="#{event.name}" style="display:block;color:red;width:400px" />          			
+								
+              	<h:outputText id="id2" value="#{event.description}" />
+
+              	<h:outputText id="id3" value="Date : #{event.date}" />
  
-              	<h:outputText id="id4" value="Address: #{event.address}" rendered="#{not event.editable}"/>
-              	<h:inputText id="id41" value="#{event.address}" rendered="#{event.editable}"/>
+              	<h:outputText id="id4" value="Address: #{event.address}" />
               	
-              	<h:outputText id="id5" value="#tag: #{event.type}"  rendered="#{not event.editable}"/>
-              	<h:selectOneMenu id="id51"
-                     value="#{event.type}" rendered="#{event.editable}">
-        		<f:selectItem id="item1" itemLabel="sale" itemValue="sale" />
-        		<f:selectItem id="item2" itemLabel="contest" itemValue="contest" />
-        		<f:selectItem id="item3" itemLabel="party" itemValue="party" />
-        		<f:selectItem id="item4" itemLabel="news" itemValue="news" />
-       			</h:selectOneMenu>	
-       			
-       				<h:commandButton value="Edit" action="#{EventBean.edit(event)}" rendered="#{not event.editable}"/>
-        			<h:commandButton value="Save" action="#{EventBean.updateEvent(event)}" rendered="#{event.editable}">
-        			<f:ajax render="@all" execute="id11 id21  id41 id51"></f:ajax>
-        			</h:commandButton>	
-        			
-        			<h:commandButton value="Delete" action="#{EventBean.deleteEvent()}">
-        			<f:setPropertyActionListener 
-                     target="#{EventBean.id}" value="#{event.id}" />
-                     <f:ajax render="@all"/>
-        			</h:commandButton>			            				
+              	<h:outputText id="id5" value="#tag: #{event.type}" />
+              				            				
               </h:panelGrid>
         </ui:repeat>  
             
@@ -81,7 +61,6 @@
              <f:ajax render="@all" execute="date1 date2"/>
             </h:commandButton>
            
-            <h:commandButton action="back" value="Back Home" />
     	</h:form>
     </ui:define>
 </ui:composition>

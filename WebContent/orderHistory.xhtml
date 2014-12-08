@@ -1,0 +1,117 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+    xmlns:ui="http://java.sun.com/jsf/facelets"
+    xmlns:h="http://java.sun.com/jsf/html"
+    xmlns:f="http://java.sun.com/jsf/core">
+<h:head>
+    	<style type="text/css">
+#order-table{   
+	border-collapse:collapse;
+}
+ 
+#order-table-header{
+	text-align:center;
+	background:none repeat scroll 0 0 #E5E5E5;
+	border-bottom:1px solid #BBBBBB;
+	padding:16px;
+}
+ 
+#order-table-odd-row{
+	text-align:center;
+	background:none repeat scroll 0 0 #FFFFFFF;
+	border-top:1px solid #BBBBBB;
+}
+ 
+#order-table-even-row{
+	text-align:center;
+	background:none repeat scroll 0 0 #F9F9F9;
+	border-top:1px solid #BBBBBB;
+}
+
+</style>
+</h:head>
+<h:body>
+<ui:composition template="/WEB-INF/templates/template.xhtml">
+    <ui:define name="mainBody">
+        <h:form>           	
+              <h:outputText value="#{RentBean.searchMessage}" id="message" style="display:block;font-weight:bold;margin-top:20px"/>         
+              
+            <h:dataTable id="table1" value="#{RentBean.rents}" var="rent" border="1" cellspacing="1" 
+                styleClass="order-table"
+    			headerClass="order-table-header"
+    			rowClasses="order-table-odd-row,order-table-even-row">
+    			<f:facet name="header">
+        			<h:outputText value="Order History" />
+    			</f:facet>
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText value="orderId" />
+        			</f:facet>
+        			<h:outputText id="id1" value="#{rent.id}" />
+    			</h:column>
+    			
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText value="create time" />
+        			</f:facet>
+        				<h:outputText id="id2" value="#{rent.createTime}" />
+    			</h:column>
+    
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText value="bikeid" />
+        			</f:facet>
+        				<h:outputText id="id3" value="#{rent.bikeid}" />
+    			</h:column>
+    			
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText value="begin date" />
+        			</f:facet>
+        				<h:outputText id="id4" value="#{rent.datebegin}" />
+    			</h:column>
+    			
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText value="end date" />
+        			</f:facet>
+        				<h:outputText id="id5" value="#{rent.dateend}" />
+    			</h:column>
+    			
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText value="rent price" />
+        			</f:facet>
+        				<h:outputText id="id6" value="#{rent.price}" />
+    			</h:column>
+    			
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText value="damagefee" />
+        			</f:facet>
+        				<h:outputText id="id7" value="#{rent.damagefee}" />
+    			</h:column>
+    			
+    			<h:column>
+        			<f:facet name="header">
+            			<h:outputText value="latefee" />
+        			</f:facet>
+        				<h:outputText id="id8" value="#{rent.latefee}" />
+    			</h:column>
+		</h:dataTable>         
+       </h:form>
+    </ui:define>
+   
+    <ui:define name="sideBar">
+    	<h:form>
+           <h:outputText value="Welcome User: #{loginBean.email}" style="display:block; color:blue;margin-top:20px;margin-bottom:50px
+    		;margin-left:10px;" />
+    		<h:commandButton action="back" value="Back Home" />
+           
+    	</h:form>
+    </ui:define>
+</ui:composition>
+</h:body>
+</html>
