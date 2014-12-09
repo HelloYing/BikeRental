@@ -31,6 +31,8 @@
             
             <h:outputText value="#{profileBean.message}" id="message" style="display:block;font-weight:bold;margin-top:20px"
             />
+            
+            <h:commandButton action="back" value="Back Home" />
         </h:form>
     </ui:define>
     
@@ -38,7 +40,7 @@
               <h:outputText value="Welcome user #{loginBean.email} " style="display:block; color:blue;margin-top:20px;margin-bottom:50px
     		;margin-left:10px;"></h:outputText>
               
-             	<h:commandButton action="back" value="Back Home" />
+             	
     </ui:define>
 </ui:composition>
 </html>
